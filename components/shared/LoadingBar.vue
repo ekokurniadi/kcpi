@@ -1,56 +1,48 @@
 <template>
-  <div
-    v-if="loading"
-    class="loading-page"
-    style="width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85)"
-  >
-    <img loading="lazy" src="assets/images/app-logo.png" alt="app-logo" />
-
-    <div class="loading"></div>
+  <div>
+    <v-overlay :value="isLoading" class="align-center justify-center">
+      <div class="floating-img">
+        <img
+          loading="lazy"
+          src="assets/images/kcpi-logo.png"
+          alt="app-logo"
+          width="80px"
+        />
+      </div>
+      <div class="overlay-progress">
+        <v-progress-circular
+          color="amber"
+          indeterminate
+          size="80"
+        ></v-progress-circular>
+      </div>
+    </v-overlay>
   </div>
 </template>
+
 <script>
 export default {
-  data: () => ({
-    loading: false,
-  }),
+  data() {
+    return {
+      isLoading: false,
+    }
+  },
   methods: {
     start() {
-      this.loading = true
+      this.isLoading = true
     },
     finish() {
-      this.loading = false
+      this.isLoading = false
     },
   },
 }
 </script>
+
 <style scoped>
-.loading-page {
-  position: fixed;
-  top: -10;
-  right: 0;
-  z-index: 9999;
-  padding: 1rem;
-  text-align: center;
-  font-size: 3rem;
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.floating-img {
+  position: absolute;
 }
-.loading {
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 4px solid rgba(9, 133, 81, 0.705);
-  border-radius: 50%;
-  border-top-color: #158876;
-  animation: spin 1s ease-in-out infinite;
-}
-@keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-  }
+.overlay-progress {
+  position: relative;
 }
 </style>

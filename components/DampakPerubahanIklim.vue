@@ -6,7 +6,7 @@
           <h3 class="widget-title">Dampak Negatif Perubahan Iklim</h3>
           <p>
             Perubahan iklim berdampak sangat luas pada kehidupan masyarakat.
-            Kenaikan suhu bumi tidak hanya berdampak pada naiknya tempratur bumi
+            Kenaikan suhu bumi tidak hanya berdampak pada naiknya temperatur bumi
             tetapi juga mengubah sistim iklim yang mempengaruhi berbagai aspek
             pada perubahan alam dan kehidupan manusia. Beberapa contoh dampak
             negative perubahan iklim adalah adalah gagal panen, cuaca ekstrim
@@ -36,11 +36,14 @@
                 <a class="gallery-popup" href="#">
                   <img
                     class="img-fluid"
-                    :src="artikel.image"
+                    :src="`${$config.baseURLMedia}img/` + artikel.image"
                     :alt="artikel.url_slug"
-                    style="height: 250px !important; object-fit: cover"
+                    style="
+                      width: 100% !important;
+                      height: 250px !important;
+                      object-fit: cover;
+                    "
                   />
-                  <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                 </a>
                 <div class="project-item-info">
                   <div class="project-item-info-content">
@@ -56,13 +59,6 @@
           </div>
           <!-- shuffle end -->
         </div>
-
-        <div class="col-12">
-          <div class="general-btn text-center">
-            <a class="btn btn-primary" href="projects.html">Lihat Semua</a
-            >
-          </div>
-        </div>
       </div>
       <!-- Content row end -->
     </div>
@@ -72,7 +68,11 @@
 </template>
 
 <script>
+import TabBar from '@/components/shared/TabBar.vue'
 export default {
+  components: {
+    'tab-bar': TabBar,
+  },
   data() {
     return {
       artikels: [],
@@ -82,29 +82,34 @@ export default {
   },
   created: async function () {
     await this.getCategories()
-    await this.getArtikel()
   },
 
   methods: {
     getCategories: async function () {
       await this.$axios
-        .get('https://stikeskeluargabunda.ac.id/demo/apitest/kategori.json')
+        .$get(`${this.$config.baseURL}/kategoribytype?tipe=Dampak Negatif`)
         .then((res) => {
-          this.categories = res.data.data
+          let decrypt = this.$decryptFunc(
+            res,
+            '/kategoribytype?tipe=Dampak Negatif'
+          )
+          this.categories = decrypt.data
+          this.getArtikel(this.categories[0].id)
         })
         .catch((err) => {})
     },
-    getArtikel: async function () {
+    getArtikel: async function (id) {
       await this.$axios
-        .get('https://stikeskeluargabunda.ac.id/demo/apitest/artikel.json')
+        .$get(`${this.$config.baseURL}/artikelbykategori/${id}`)
         .then((res) => {
-          this.artikels = res.data.data
+          let decrypt = this.$decryptFunc(res, `/artikelbykategori/${id}`)
+          this.artikels = decrypt.data
         })
         .catch((err) => {})
     },
     setSelectedCategories: async function (index) {
       this.selectedCategories = index
-      await this.getArtikel()
+      await this.getArtikel(this.categories[index].id)
     },
   },
 }

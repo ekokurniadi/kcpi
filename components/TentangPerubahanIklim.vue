@@ -11,7 +11,10 @@
             >
           </div>
 
-          <div class="col-lg-6 mt-5 mt-lg-0 align-self-center bg-dark" id="wrap">
+          <div
+            class="col-lg-6 mt-5 mt-lg-0 align-self-center bg-dark"
+            id="wrap"
+          >
             <iframe
               width="100%"
               height="315"
@@ -26,17 +29,16 @@
   </div>
 </template>
 
-
 <style scoped>
-  #wrap {
+#wrap {
   width: 100%;
   height: 330px;
   border-radius: 8px;
-  padding:5px 5px;
-  background-color: rgba(0,0,0,0.5);
+  padding: 5px 5px;
+  background-color: rgba(0, 0, 0, 0.5);
   position: relative;
 }
-iframe{
+iframe {
   border-radius: 8px;
 }
 </style>
@@ -48,17 +50,17 @@ export default {
       result: {},
     }
   },
+
   created: async function () {
     await this.getData()
   },
   methods: {
     getData: async function () {
-      this.$axios
-        .get(
-          'https://stikeskeluargabunda.ac.id/demo/apitest/tentang/tentang_perubahan_iklim.json'
-        )
+      await this.$axios
+        .$get(`${this.$config.baseURL}/iklim`)
         .then((res) => {
-          this.result = res.data.data[0]
+          let decrypt = this.$decryptFunc(res)
+          this.result=decrypt.data
         })
         .catch((err) => console.log(err))
     },

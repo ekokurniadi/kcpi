@@ -1,8 +1,15 @@
+require('dotenv').config()
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL,
+    baseURLMedia: process.env.BASE_URL_MEDIA,
+    secretKey: process.env.SECRET_KEY,
+    flavor: process.env.FLAVOR,
+  },
   productionSourceMap: true,
   head: {
-    title: 'kcpi',
+    title: 'KCPI',
     htmlAttrs: {
       lang: 'en',
     },
@@ -60,24 +67,25 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/decrypt.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: [
+    '@nuxtjs/vuetify',
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
   ],
-
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL:'/',
     proxy: true,
     credentials: false,
   },

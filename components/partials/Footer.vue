@@ -8,7 +8,7 @@
               <div class="d-flex">
                 <img
                   loading="lazy"
-                  src="assets/images/kcpi-logo.png"
+                  src="/assets/images/kcpi-logo.png"
                   style="width: 60px; height: 60px"
                   alt="Constra"
                 />

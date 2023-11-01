@@ -7,13 +7,13 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
               <div class="logo">
-                <a class="d-block" href="/">
+                <nuxt-link to="/" class="d-block">
                   <img
                     loading="lazy"
-                    src="assets/images/app-logo.png"
+                    src="/assets/images/app-logo.png"
                     alt="app-logo"
                   />
-                </a>
+                </nuxt-link>
               </div>
               <!-- logo end -->
               <button
@@ -28,22 +28,35 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
 
-              <div id="navbar-collapse" class="collapse navbar-collapse">
+              <div
+                id="navbar-collapse"
+                class="collapse navbar-collapse"
+                ref="navbars"
+              >
                 <ul class="nav navbar-nav ml-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="contact.html">Beranda</a>
+                  <li :class="setActive('/', false)">
+                    <nuxt-link class="nav-link" to="/">Beranda</nuxt-link>
                   </li>
 
-                  <li class="nav-item dropdown">
-                    <a
-                      href="#"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
+                  <li :class="setActive('tentang', true)" id="dropdown-tentang">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"
                       >Tentang <i class="fa fa-angle-down"></i
                     ></a>
                     <ul class="dropdown-menu" role="menu">
-                      <li><a href="about.html">Knowledge Centre</a></li>
-                      <li><a href="team.html">Amanat Perubahan Iklim</a></li>
+                      <li>
+                        <nuxt-link
+                          to="/tentang/knowledge-center"
+                          class="custom_collapse"
+                          >Knowledge Centre</nuxt-link
+                        >
+                      </li>
+                      <li>
+                        <nuxt-link
+                          to="/tentang/amanat-perubahan-iklim"
+                          class="custom_collapse"
+                          >Amanat Perubahan Iklim</nuxt-link
+                        >
+                      </li>
                     </ul>
                   </li>
 
@@ -96,8 +109,10 @@
                       <li><a href="typography.html">Teknologi</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Inovasi</a>
+                  <li :class="setActive('/inovasi')">
+                    <nuxt-link class="nav-link" to="/inovasi"
+                      >Inovasi</nuxt-link
+                    >
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="contact.html">Hasil Kerjasama</a>
@@ -119,3 +134,29 @@
   </header>
   <!--/ Header end -->
 </template>
+<script>
+export default {
+  mounted() {
+    this.removeClassActive()
+  },
+
+  methods: {
+    removeClassActive() {
+      const dropdowns = document.querySelectorAll('.nav-item.dropdown')
+      dropdowns.forEach(function (dropdown) {
+        dropdown.classList.remove('active')
+      })
+    },
+    setActive: function (named, isDropdown) {
+      if (isDropdown) {
+        if (this.$route.fullPath.split('/')[1] == named && named != '') {
+          return 'nav-item dropdown active'
+        }
+        return 'nav-item dropdown'
+      } else {
+        return this.$route.fullPath == named ? 'nav-item active' : 'nav-item'
+      }
+    },
+  },
+}
+</script>

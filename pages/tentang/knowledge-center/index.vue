@@ -1,0 +1,78 @@
+<template>
+  <div class="mt-5">
+    <div
+      id="banner-area"
+      class="banner-area"
+      style="background-image: url(/assets/images/static-bg-img/sky.jpg)"
+    >
+      <div class="banner-text">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="banner-heading">
+                <h1 class="banner-title">
+                  Tentang Knowledge Centre Perubahan Iklim
+                </h1>
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="#">Tentang</a></li>
+                    <li class="breadcrumb-item active">
+                      <a href="#" aria-current="page"
+                        >Knowledge Centre Perubahan Iklim</a
+                      >
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <!-- Col end -->
+          </div>
+          <!-- Row end -->
+        </div>
+        <!-- Container end -->
+      </div>
+      <!-- Banner text end -->
+    </div>
+    <!-- Banner area end -->
+
+    <section id="main-container" class="main-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="column-title">{{ result.title }}</h3>
+            <div v-html="result.content"></div>
+          </div>
+          <!-- Col end -->
+        </div>
+        <!-- Content row end -->
+      </div>
+      <!-- Container end -->
+    </section>
+    <!-- Main container end -->
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      result: {},
+    }
+  },
+
+  created: async function () {
+    await this.getData()
+  },
+  methods: {
+    getData: async function () {
+      await this.$axios
+        .$get(`${this.$config.baseURL}/konten_statis/tentang-knowledge-centre`)
+        .then((res) => {
+          let decrypt = this.$decryptFunc(res,'/konten_statis/tentang-knowledge-centre')
+          this.result = decrypt.data
+        })
+        .catch((err) => console.log(err))
+    },
+  },
+}
+</script>

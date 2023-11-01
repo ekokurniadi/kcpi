@@ -1,5 +1,5 @@
 <template>
-  <div class="body-inner">
+  <div class="body-inner" oncontextmenu="return false;">
     <app-header />
     <nuxt />
     <app-footer />

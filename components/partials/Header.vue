@@ -83,35 +83,29 @@
                   </li>
 
                   <li class="nav-item dropdown">
-                    <a
-                      href="#"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"
                       >Aksi <i class="fa fa-angle-down"></i
                     ></a>
                     <ul class="dropdown-menu" role="menu">
-                      <li><a href="services.html">Mitigasi</a></li>
-                      <li><a href="service-single.html">Adaptasi</a></li>
-                      <li><a href="service-single.html">REDD+</a></li>
-                      <li><a href="service-single.html">Proklim</a></li>
+                      <li><nuxt-link to="/">Mitigasi</nuxt-link></li>
+                      <li><nuxt-link to="/">Adaptasi</nuxt-link></li>
+                      <li><nuxt-link to="/">REDD+</nuxt-link></li>
+                      <li><nuxt-link to="/">Proklim</nuxt-link></li>
                     </ul>
                   </li>
 
                   <li class="nav-item dropdown">
-                    <a
-                      href="#"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"
                       >Sumber Daya <i class="fa fa-angle-down"></i
                     ></a>
                     <ul class="dropdown-menu" role="menu">
-                      <li><a href="typography.html">Sumber Dana</a></li>
+                      <li><nuxt-link to="/">Sumber Dana</nuxt-link></li>
                       <li>
-                        <a href="404.html"
+                        <nuxt-link to="/"
                           >Peningkatan Kapasitas dan Tenaga Ahli
-                        </a>
+                        </nuxt-link>
                       </li>
-                      <li><a href="typography.html">Teknologi</a></li>
+                      <li><nuxt-link to="/">Teknologi</nuxt-link></li>
                     </ul>
                   </li>
                   <li :class="setActive('/inovasi')">
@@ -120,10 +114,10 @@
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Hasil Kerjasama</a>
+                    <nuxt-link class="nav-link" to="/">Hasil Kerjasama</nuxt-link>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Profil Provinsi</a>
+                    <nuxt-link class="nav-link" to="/">Profil Provinsi</nuxt-link>
                   </li>
                 </ul>
               </div>

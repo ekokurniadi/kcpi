@@ -29,8 +29,7 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-lg-12">
-            <h2 class="section-title">Work of Excellence</h2>
-            <h3 class="section-sub-title">Recent Projects</h3>
+            <h3 class="widget-title">Aksi, Inovasi dan Sumberdaya</h3>
           </div>
         </div>
         <!--/ Title row end -->
@@ -40,41 +39,40 @@
             <div class="row">
               <div
                 class="col-lg-4 col-md-6 mb-5"
-                v-for="artikel in resultKategori"
+                v-for="data in resultKategori"
                 data-aos="fade-right"
                 data-aos-duration="1000"
               >
-                <div class="ts-service-box">
+                <div class="ts-service-box" style="background-color:white;border-radius:10px; padding-bottom:15px;box-shadow: 1px 1px 15px #888888;">
                   <div class="ts-service-image-wrapper">
                     <img
+
                       loading="lazy"
                       class="w-100"
-                      :src="`${$config.baseURLMedia}img/` + artikel.image"
-                      :alt="artikel.url_slug"
+                      :src="`${$config.baseURLMedia}img/` + data.image"
+                      :alt="data.category"
                       style="
                         width: 100% !important;
                         height: 250px !important;
                         object-fit: cover;
+                        border-top-left-radius:10px;
+                        border-top-right-radius:10px;
                       "
                     />
                   </div>
-                  <div class="d-flex">
-                    <div class="ts-service-info">
-                      <h3 class="service-box-title">
-                        <nuxt-link
-                          :to="'/detail-artikel/' + artikel.url_slug"
-                          >{{ artikel.category }}</nuxt-link
-                        >
-                      </h3>
-                      <div v-html="artikel.description"></div>
-                      <nuxt-link
-                        class="btn btn-primary"
-                        aria-label="service-details"
-                        :to="'/detail-artikel/' + artikel.url_slug"
-                      >
-                        Read More</nuxt-link
-                      >
-                    </div>
+
+                  <div class="ts-service-info text-center ml-0">
+                    <h3 class="service-box-title">
+                      <nuxt-link to="">{{ data.category }}</nuxt-link>
+                    </h3>
+                    <div class="py-3" v-html="data.desc"></div>
+                    <nuxt-link
+                      class="btn btn-primary"
+                      aria-label="service-details"
+                      to="/"
+                    >
+                      Read More</nuxt-link
+                    >
                   </div>
                 </div>
                 <!-- Service2 end -->
@@ -132,12 +130,12 @@ export default {
         .then((res) => {
           let decrypt = this.$decryptFunc(res, 'kategori_home')
           this.resultKategori = decrypt.data
+          this.resultKategori.reverse()
         })
         .catch((err) => {
           this.isLoading = false
         })
     },
-
   },
 }
 </script>

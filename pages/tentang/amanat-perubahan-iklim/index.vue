@@ -8,7 +8,7 @@
       <div class="banner-text">
         <div class="container">
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12" data-aos="fade-down" data-aos-duration="1000">
               <div class="banner-heading">
                 <h1 class="banner-title">Tentang Amanat Perubahan Iklim</h1>
                 <nav aria-label="breadcrumb">
@@ -33,7 +33,7 @@
     <section id="main-container" class="main-container">
       <div class="container">
         <div class="row">
-          <div class="col-xl-3 col-lg-4">
+          <div class="col-xl-3 col-lg-4" data-aos="fade-right" data-aos-duration="1000">
             <div class="sidebar sidebar-left">
               <div class="widget">
                 <h3 class="widget-title">Kategori</h3>
@@ -54,7 +54,7 @@
           </div>
           <!-- Sidebar Col end -->
 
-          <div class="col-xl-8 col-lg-8">
+          <div class="col-xl-8 col-lg-8" data-aos="fade-left" data-aos-duration="1000">
             <div class="content-inner-page">
               <h2 class="column-title mrt-0">{{ dataContent.title }}</h2>
 

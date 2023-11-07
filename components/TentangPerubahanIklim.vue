@@ -1,19 +1,19 @@
 <template>
   <div>
-    <section id="main-container" class="main-container">
+    <section id="main-container" class="main-container solid-bg">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
             <h3 class="column-title">Tentang Perubahan Iklim</h3>
             <p v-html="result.desc"></p>
-            <a class="btn btn-primary" href="projects.html"
-              >Pelajari Selengkapnya</a
+            <nuxt-link class="btn btn-primary" to="/tentang/amanat-perubahan-iklim"
+              >Pelajari Selengkapnya</nuxt-link
             >
           </div>
 
           <div
             class="col-lg-6 mt-5 mt-lg-0 align-self-center bg-dark"
-            id="wrap"
+            id="wrap" data-aos="fade-left" data-aos-duration="1000"
           >
             <iframe
               width="100%"

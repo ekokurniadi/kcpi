@@ -8,7 +8,11 @@
       <div class="banner-text">
         <div class="container">
           <div class="row">
-            <div class="col-lg-12">
+            <div
+              class="col-lg-12"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+            >
               <div class="banner-heading">
                 <h1 class="banner-title">
                   Tentang Knowledge Centre Perubahan Iklim
@@ -39,10 +43,87 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="column-title">{{ result.title }}</h3>
-            <div v-html="result.content"></div>
+            <h3
+              class="column-title"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
+              {{ result.title }}
+            </h3>
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              v-html="result.content"
+            ></div>
           </div>
           <!-- Col end -->
+        </div>
+
+        <div class="row">
+          <div class="col-md-12" data-aos="fade-left" data-aos-duration="1000">
+            <h3 class="column-title">Kirim Masukan</h3>
+
+            <form id="contact-form" action="#" method="post" role="form">
+              <div class="error-container"></div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Nama</label>
+                    <input
+                      class="form-control form-control-name"
+                      name="name"
+                      id="name"
+                      placeholder=""
+                      type="text"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input
+                      class="form-control form-control-email"
+                      name="email"
+                      id="email"
+                      placeholder=""
+                      type="email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Subyek</label>
+                    <input
+                      class="form-control form-control-subject"
+                      name="subject"
+                      id="subject"
+                      placeholder=""
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Pesan</label>
+                <textarea
+                  class="form-control form-control-message"
+                  name="message"
+                  id="message"
+                  placeholder=""
+                  rows="10"
+                  required
+                ></textarea>
+              </div>
+              <div class="text-right">
+                <br />
+                <button class="btn btn-primary solid blank" type="button">
+                  Send Feedback
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
         <!-- Content row end -->
       </div>
@@ -68,7 +149,10 @@ export default {
       await this.$axios
         .$get(`${this.$config.baseURL}/konten_statis/tentang-knowledge-centre`)
         .then((res) => {
-          let decrypt = this.$decryptFunc(res,'/konten_statis/tentang-knowledge-centre')
+          let decrypt = this.$decryptFunc(
+            res,
+            '/konten_statis/tentang-knowledge-centre'
+          )
           this.result = decrypt.data
         })
         .catch((err) => console.log(err))

@@ -60,19 +60,24 @@
                     </ul>
                   </li>
 
-                  <li class="nav-item dropdown">
-                    <a
-                      href="#"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
+                  <li :class="setActive('info', true)" id="dropdown-info">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"
                       >Info Iklim <i class="fa fa-angle-down"></i
                     ></a>
                     <ul class="dropdown-menu" role="menu">
                       <li>
-                        <a href="projects.html">Mengenai Perubahan Iklim</a>
+                        <nuxt-link
+                          to="/info/mengenai-perubahan-iklim"
+                          class="custom_collapse"
+                          >Mengenai Perubahan Iklim</nuxt-link
+                        >
                       </li>
                       <li>
-                        <a href="projects-single.html">Dampak dan Fenomena </a>
+                        <nuxt-link
+                          to="/info/dampak-dan-fenomena"
+                          class="custom_collapse"
+                          >Dampak dan Fenomena</nuxt-link
+                        >
                       </li>
                     </ul>
                   </li>

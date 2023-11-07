@@ -2,7 +2,7 @@
   <section id="main-container" class="main-container">
     <div class="container">
       <div class="row text-center">
-        <div class="col-lg-12">
+        <div class="col-lg-12" data-aos="fade-right" data-aos-duration="1000">
           <h3 class="widget-title">Dampak Negatif Perubahan Iklim</h3>
           <p>
             Perubahan iklim berdampak sangat luas pada kehidupan masyarakat.
@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12">
+        <div class="col-12" data-aos="fade-left" data-aos-duration="1000">
           <div class="shuffle-btn-group">
             <label
               v-for="(cat, index) in categories"
@@ -30,10 +30,10 @@
           <div class="row">
             <div
               class="col-lg-4 col-md-6 shuffle-item"
-              v-for="artikel in artikels"
+              v-for="artikel in artikels" data-aos="fade-right" data-aos-duration="1000"
             >
               <div class="project-img-container">
-                <a class="gallery-popup" href="#">
+                <nuxt-link class="gallery-popup" :to="'/detail-artikel/'+artikel.url_slug">
                   <img
                     class="img-fluid"
                     :src="`${$config.baseURLMedia}img/` + artikel.image"
@@ -44,11 +44,11 @@
                       object-fit: cover;
                     "
                   />
-                </a>
+                </nuxt-link>
                 <div class="project-item-info">
                   <div class="project-item-info-content">
                     <h3 class="project-item-title">
-                      <a href="projects-single.html">{{ artikel.title }}</a>
+                      <nuxt-link :to="'/detail-artikel/'+artikel.url_slug">{{ artikel.title }}</nuxt-link>
                     </h3>
                     <p class="project-cat">{{ artikel.category }}</p>
                   </div>

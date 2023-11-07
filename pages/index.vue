@@ -1,6 +1,7 @@
 <template>
   <div oncontextmenu="return false;">
     <app-carousel />
+    <app-pintasan data-aos="fade-down" data-aos-duration="1000" />
     <app-tentang-perubahan-iklim />
     <app-divider />
     <app-dampak-perubahan-iklim />

@@ -43,10 +43,17 @@
                 data-aos="fade-right"
                 data-aos-duration="1000"
               >
-                <div class="ts-service-box" style="background-color:white;border-radius:10px; padding-bottom:15px;box-shadow: 1px 1px 15px #888888;">
+                <div
+                  class="ts-service-box"
+                  style="
+                    background-color: white;
+                    border-radius: 10px;
+                    padding-bottom: 15px;
+                    box-shadow: 1px 1px 15px #888888;
+                  "
+                >
                   <div class="ts-service-image-wrapper">
                     <img
-
                       loading="lazy"
                       class="w-100"
                       :src="`${$config.baseURLMedia}img/` + data.image"
@@ -55,21 +62,23 @@
                         width: 100% !important;
                         height: 250px !important;
                         object-fit: cover;
-                        border-top-left-radius:10px;
-                        border-top-right-radius:10px;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
                       "
                     />
                   </div>
 
                   <div class="ts-service-info text-center ml-0">
                     <h3 class="service-box-title">
-                      <nuxt-link to="">{{ data.category }}</nuxt-link>
+                      <nuxt-link :to="'/detail-kategory/' + data.id">{{
+                        data.category
+                      }}</nuxt-link>
                     </h3>
                     <div class="py-3" v-html="data.desc"></div>
                     <nuxt-link
                       class="btn btn-primary"
                       aria-label="service-details"
-                      to="/"
+                      :to="'/detail-kategory/' + data.id"
                     >
                       Read More</nuxt-link
                     >

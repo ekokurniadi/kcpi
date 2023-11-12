@@ -127,11 +127,13 @@ export default {
       artikels: [],
       categories: [],
       selectedCategories: 0,
+      fenomenas:[],
     }
   },
 
   created: async function () {
     await this.getCategories()
+    await this.getFenomena()
   },
 
   methods: {
@@ -154,6 +156,15 @@ export default {
         .then((res) => {
           let decrypt = this.$decryptFunc(res, `/artikelbykategori/${id}`)
           this.artikels = decrypt.data
+        })
+        .catch((err) => {})
+    },
+    getFenomena: async function (id) {
+      await this.$axios
+        .$get(`${this.$config.baseURL}/kategoribyfilter/inovasi`)
+        .then((res) => {
+          let decrypt = this.$decryptFunc(res, `/kategoribyfilter/inovasi`)
+          this.fenomenas = decrypt.data
         })
         .catch((err) => {})
     },

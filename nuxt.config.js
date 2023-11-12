@@ -58,6 +58,12 @@ export default {
       { src: '/assets/plugins/colorbox/jquery.colorbox.js' },
       { src: '/assets/plugins/shuffle/shuffle.min.js' },
       { src: '/assets/js/script.js' },
+      {
+        src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+      },
+      {
+        src: 'https://cdn.jsdelivr.net/gh/lewis-kori/vue-google-translate@main/src/utils/translatorRegex.js',
+      },
     ],
   },
 
@@ -67,15 +73,13 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/decrypt.js','~/plugins/aos.js'],
+  plugins: ['~/plugins/decrypt.js', '~/plugins/aos.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    '@nuxtjs/vuetify',
-  ],
+  buildModules: ['@nuxtjs/vuetify'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -85,7 +89,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL:'/',
+    baseURL: '/',
     proxy: true,
     credentials: false,
   },

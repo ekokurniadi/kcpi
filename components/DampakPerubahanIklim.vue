@@ -30,7 +30,7 @@
           <div class="row">
             <div
               class="col-lg-4 col-md-6 shuffle-item"
-              v-for="artikel in artikels" data-aos="fade-right" data-aos-duration="1000"
+              v-for="artikel in artikels" v-if="artikel.publish=='y'" data-aos="fade-right" data-aos-duration="1000"
             >
               <div class="project-img-container">
                 <nuxt-link class="gallery-popup" :to="'/detail-artikel/'+artikel.url_slug">

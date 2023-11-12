@@ -5,12 +5,16 @@
       cycle
       class="mt-5"
       hide-delimiter-background
+      height="auto"
     >
-      <v-carousel-item
-        v-for="(item, i) in result"
-        :key="i"
-        :src="`${$config.baseURLMedia}img/`+item.url"
-      ></v-carousel-item>
+      <v-carousel-item v-for="(item, i) in result" :key="i">
+        <img
+          class="custom-background-position"
+          :src="`${$config.baseURLMedia}img/` + item.url"
+          height="600"
+          width="100%"
+        />
+      </v-carousel-item>
     </v-carousel>
   </div>
 </template>
@@ -46,5 +50,10 @@ export default {
 <style>
 .theme--dark.v-btn.v-btn--icon {
   color: orange;
+}
+.custom-background-position {
+  background-position: top center; /* atau background-position: 0% 0%; atau background-position: 0 0; */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>

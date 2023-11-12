@@ -1,18 +1,32 @@
 <template>
   <!-- Header start -->
-  <header id="header" class="header-one">
-    <div class="site-navigation">
+  <header id="header" class="header-one" style="margin-botom: 60px !important">
+    <div class="site-navigation mb-5">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
               <div class="logo">
                 <nuxt-link to="/" class="d-block">
-                  <img
-                    loading="lazy"
-                    src="/assets/images/app-logo.png"
-                    alt="app-logo"
-                  />
+                  <div class="d-flex">
+                    <img
+                      loading="lazy"
+                      src="/assets/images/kcpi-single.png"
+                      style="width: 50px; height: 50px; margin-bottom: 10px"
+                      alt="Constra"
+                    />
+                    <span class="justify-content-center align-self-center">
+                      <h6 class="ml-3 mr-3 my-auto text-white">
+                        KNOWLEDGE CENTRE <br />PERUBAHAN IKLIM
+                      </h6>
+                    </span>
+                    <img
+                      loading="lazy"
+                      src="/assets/images/klhk-logo.png"
+                      style="width: 50px; height: 50px; margin-top: 5px"
+                      alt="Logo KCPI"
+                    />
+                  </div>
                 </nuxt-link>
               </div>
               <!-- logo end -->
@@ -82,7 +96,7 @@
                     </ul>
                   </li>
 
-                  <li class="nav-item dropdown">
+                  <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown"
                       >Aksi <i class="fa fa-angle-down"></i
                     ></a>
@@ -92,20 +106,20 @@
                       <li><nuxt-link to="/">REDD+</nuxt-link></li>
                       <li><nuxt-link to="/">Proklim</nuxt-link></li>
                     </ul>
-                  </li>
+                  </li> -->
 
-                  <li class="nav-item dropdown">
+                  <li :class="setActive('sumber-daya', true)" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown"
                       >Sumber Daya <i class="fa fa-angle-down"></i
                     ></a>
                     <ul class="dropdown-menu" role="menu">
-                      <li><nuxt-link to="/">Sumber Dana</nuxt-link></li>
+                      <li><nuxt-link to="/sumber-daya/sumber-dana">Sumber Dana</nuxt-link></li>
                       <li>
-                        <nuxt-link to="/"
+                        <nuxt-link to="/sumber-daya/peningkatan-kapasitas-dan-tenaga-ahli"
                           >Peningkatan Kapasitas dan Tenaga Ahli
                         </nuxt-link>
                       </li>
-                      <li><nuxt-link to="/">Teknologi</nuxt-link></li>
+                      <li><nuxt-link to="/sumber-daya/teknologi">Teknologi</nuxt-link></li>
                     </ul>
                   </li>
                   <li :class="setActive('/inovasi')">
@@ -114,10 +128,14 @@
                     >
                   </li>
                   <li class="nav-item">
-                    <nuxt-link class="nav-link" to="/">Hasil Kerjasama</nuxt-link>
+                    <nuxt-link class="nav-link" to="/"
+                      >Hasil Kerjasama</nuxt-link
+                    >
                   </li>
                   <li class="nav-item">
-                    <nuxt-link class="nav-link" to="/">Profil Provinsi</nuxt-link>
+                    <nuxt-link class="nav-link" to="/"
+                      >Profil Provinsi</nuxt-link
+                    >
                   </li>
                 </ul>
               </div>

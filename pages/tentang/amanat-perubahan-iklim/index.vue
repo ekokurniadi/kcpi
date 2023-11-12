@@ -60,7 +60,7 @@
 
               <div class="row">
                 <div class="col-md-12">
-                  <div v-html="dataContent.content"></div>
+                  <div v-html="dataContent.content" style="text-align:justify"></div>
                 </div>
                 <!-- col end -->
               </div>

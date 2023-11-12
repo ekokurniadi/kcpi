@@ -1,8 +1,34 @@
 <template>
-  <div>
+  <div class="mt-5">
+    <div
+      id="banner-area"
+      class="banner-area"
+      style="background-image: url(/assets/images/static-bg-img/sky.jpg)"
+    >
+      <div class="banner-text">
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-lg-12"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+            >
+              <div class="banner-heading">
+                <h1 class="banner-title">Inovasi</h1>
+              </div>
+            </div>
+            <!-- Col end -->
+          </div>
+          <!-- Row end -->
+        </div>
+        <!-- Container end -->
+      </div>
+      <!-- Banner text end -->
+    </div>
+    <!-- Banner area end -->
+
     <section id="main-container" class="main-container">
       <div class="container">
-
         <div class="row">
           <div class="col-12" data-aos="fade-left" data-aos-duration="1000">
             <div class="row">
@@ -57,6 +83,7 @@
       </div>
       <!-- Conatiner end -->
     </section>
+    <!-- Main container end -->
   </div>
 </template>
 <script>
@@ -66,21 +93,25 @@ export default {
       result: [],
     }
   },
-  created: async function () {
-    await this.getData()
+  mounted() {
+    this.getArtikel()
   },
   methods: {
-    getData: async function () {
+    getArtikel: async function () {
       await this.$axios
-        .$get(
-          `${this.$config.baseURL}/artikelbykategori/${this.$route.params.id}`
-        )
+        .$get(`${this.$config.baseURL}/kategoribyfilter/inovasi`)
         .then((res) => {
-          let decrypt = this.$decryptFunc(res, '/artikelbykategori/')
+          let decrypt = this.$decryptFunc(res, `/kategoribyfilter/inovasi`)
           this.result = decrypt.data
         })
-        .catch((err) => console.log(err))
+        .catch((err) => {})
+    },
+    strippedContent(data) {
+      let regex = /(<([^>]+)>)/gi
+      let result = data.replace(regex, '')
+      return result.substring(0, 100) + '...'
     },
   },
 }
 </script>
+<style></style>

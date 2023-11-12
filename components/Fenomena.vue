@@ -1,30 +1,5 @@
 <template>
   <div>
-    <section id="main-container" class="main-container">
-      <div class="container">
-        <div class="row" data-aos="fade-up" data-aos-duration="1000">
-          <div class="col-md-6" v-for="(item, index) of result">
-            <div v-if="item.type == 'image'" id="wrap">
-              <img
-                loading="lazy"
-                :src="`${$config.baseURLMedia}img/` + item.media"
-                width="100%"
-                height="320px"
-              />
-            </div>
-            <div v-else-if="item.type == 'video'" id="wrap">
-              <video controls width="100%" poster="/assets/images/app-logo.png">
-                <source
-                  :src="`${$config.baseURLMedia}video/` + item.media"
-                  type="video/webm"
-                />
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="project-area" class="project-area solid-bg">
       <div class="container">
         <div class="row text-center">
@@ -35,7 +10,7 @@
         <!--/ Title row end -->
 
         <div class="row">
-          <div class="col-12" data-aos="fade-left" data-aos-duration="1000">
+          <div class="col-12">
             <div class="row">
               <div
                 class="col-lg-4 col-md-6 mb-5"
@@ -74,7 +49,11 @@
                         data.category
                       }}</nuxt-link>
                     </h3>
-                    <div class="py-3" v-html="data.desc"></div>
+                    <div
+                      class="py-3"
+                      v-html="data.desc"
+                      style="text-align: center; padding: 15px 15px"
+                    ></div>
                     <nuxt-link
                       class="btn btn-primary"
                       aria-label="service-details"
@@ -100,17 +79,6 @@
   </div>
 </template>
 
-<style scoped>
-#wrap {
-  width: 100%;
-  height: 330px;
-  border-radius: 8px;
-  padding: 5px 5px;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-</style>
-
 <script>
 export default {
   data() {
@@ -124,16 +92,6 @@ export default {
   },
   methods: {
     getDataFenomena: async function () {
-      await this.$axios
-        .$get(`${this.$config.baseURL}/fenomena`)
-        .then((res) => {
-          let decrypt = this.$decryptFunc(res, 'fenomena')
-          this.result = decrypt.data
-        })
-        .catch((err) => {
-          this.isLoading = false
-        })
-
       await this.$axios
         .$get(`${this.$config.baseURL}/kategori_home`)
         .then((res) => {

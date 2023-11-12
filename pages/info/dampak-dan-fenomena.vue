@@ -70,6 +70,7 @@
                 v-for="artikel in artikels"
                 data-aos="fade-right"
                 data-aos-duration="1000"
+                v-if="artikel.publish=='y'"
               >
                 <div class="ts-service-box">
                   <div class="ts-service-image-wrapper">
@@ -88,14 +89,18 @@
                   <div class="d-flex">
                     <div class="ts-service-info">
                       <h3 class="service-box-title">
-                        <nuxt-link :to="'/detail-artikel/' + artikel.url_slug">{{ artikel.title }}</nuxt-link>
+                        <nuxt-link
+                          :to="'/detail-artikel/' + artikel.url_slug"
+                          >{{ artikel.title }}</nuxt-link
+                        >
                       </h3>
                       <div v-html="strippedContent(artikel.content)"></div>
                       <nuxt-link
                         class="btn btn-primary"
                         aria-label="service-details"
                         :to="'/detail-artikel/' + artikel.url_slug"
-                        > Read More</nuxt-link
+                      >
+                        Read More</nuxt-link
                       >
                     </div>
                   </div>
@@ -113,6 +118,31 @@
       <!-- Conatiner end -->
     </section>
     <!-- Main container end -->
+
+    <section id="main-container" class="main-container">
+      <div class="container">
+        <div class="row" data-aos="fade-up" data-aos-duration="1000">
+          <div class="col-md-6" v-for="(item, index) of result">
+            <div v-if="item.type == 'image'" id="wrap">
+              <img
+                loading="lazy"
+                :src="`${$config.baseURLMedia}img/` + item.media"
+                width="100%"
+                height="320px"
+              />
+            </div>
+            <div v-else-if="item.type == 'video'" id="wrap">
+              <video controls width="100%" poster="/assets/images/app-logo.png">
+                <source
+                  :src="`${$config.baseURLMedia}video/` + item.media"
+                  type="video/webm"
+                />
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -127,7 +157,8 @@ export default {
       artikels: [],
       categories: [],
       selectedCategories: 0,
-      fenomenas:[],
+      fenomenas: [],
+      result: [],
     }
   },
 
@@ -149,6 +180,16 @@ export default {
           this.getArtikel(this.categories[0].id)
         })
         .catch((err) => {})
+
+      await this.$axios
+        .$get(`${this.$config.baseURL}/fenomena`)
+        .then((res) => {
+          let decrypt = this.$decryptFunc(res, 'fenomena')
+          this.result = decrypt.data
+        })
+        .catch((err) => {
+          this.isLoading = false
+        })
     },
     getArtikel: async function (id) {
       await this.$axios
@@ -180,3 +221,14 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+#wrap {
+  width: 100%;
+  height: 330px;
+  border-radius: 8px;
+  padding: 5px 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+</style>

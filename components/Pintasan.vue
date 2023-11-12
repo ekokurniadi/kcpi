@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-12">
-          <h3 class="section-sub-title">Infografis dan Media Informasi</h3>
+          <h3 class="widget-title">Infografis dan Media Informasi</h3>
         </div>
       </div>
       <!--/ Title row end -->
@@ -82,7 +82,7 @@
           <img
             loading="lazy"
             class="img-fluid"
-            src="/assets/images/kcpi-logo.png"
+            src="/assets/images/kcpi-single.png"
             alt="service-avater-image"
           />
         </div>

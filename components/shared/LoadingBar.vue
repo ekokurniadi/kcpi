@@ -4,9 +4,9 @@
       <div class="floating-img">
         <img
           loading="lazy"
-          src="assets/images/kcpi-logo.png"
+          src="assets/images/kcpi-single.png"
           alt="app-logo"
-          width="80px"
+          width="70px"
         />
       </div>
       <div class="overlay-progress">

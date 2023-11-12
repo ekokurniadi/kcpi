@@ -54,6 +54,7 @@
               data-aos="fade-left"
               data-aos-duration="1000"
               v-html="result.content"
+              style="text-align:justify"
             ></div>
           </div>
           <!-- Col end -->

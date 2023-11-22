@@ -1,11 +1,6 @@
 <template>
-  <div align="center">
-    <a href="http://www.amazingcounters.com"
-      ><img
-        border="0"
-        src="http://cc.amazingcounters.com/counter.php?i=3250120&c=9750673"
-        alt="AmazingCounters.com"
-    /></a>
+  <div>
+    <h5>Visitor Cunter Here</h5>
   </div>
 </template>
 

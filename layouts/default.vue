@@ -1,5 +1,6 @@
 <template>
   <div class="body-inner" oncontextmenu="return false;">
+    
     <app-header />
     <nuxt />
     <app-footer />
@@ -27,5 +28,8 @@ export default {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+body{
+  top: 0px !important;
 }
 </style>

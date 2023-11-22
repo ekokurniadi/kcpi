@@ -1,6 +1,8 @@
 require('dotenv').config()
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  render: {
+    csp: true
+  },
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
     baseURLMedia: process.env.BASE_URL_MEDIA,
@@ -49,6 +51,10 @@ export default {
         rel: 'stylesheet',
         href: '/assets/css/style.css',
       },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css',
+      },
     ],
     script: [
       { src: '/assets/plugins/jQuery/jquery.min.js' },
@@ -59,11 +65,11 @@ export default {
       { src: '/assets/plugins/shuffle/shuffle.min.js' },
       { src: '/assets/js/script.js' },
       {
-        src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+        src: '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
       },
-      {
-        src: 'https://cdn.jsdelivr.net/gh/lewis-kori/vue-google-translate@main/src/utils/translatorRegex.js',
-      },
+      // {
+      //   src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2',
+      // },
     ],
   },
 
@@ -73,7 +79,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/decrypt.js', '~/plugins/aos.js'],
+  plugins: ['~/plugins/decrypt.js', '~/plugins/aos.js',],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -85,6 +91,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'nuxt-helmet'
   ],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -94,6 +101,17 @@ export default {
     credentials: false,
   },
 
+  helmet: {
+    // frameguard: true,
+  },
+
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extend(config, ctx) {
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+      }
+    }
+  },
 }

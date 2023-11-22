@@ -1,19 +1,12 @@
 <template>
   <div class="mt-5">
-    <v-carousel
-      :show-arrows="false"
-      cycle
-      class="mt-5"
-      hide-delimiter-background
-      height="auto"
-    >
+    <v-carousel :show-arrows="false" :progress="true" cycle class="mt-5" hide-delimiter-background height="auto">
       <v-carousel-item v-for="(item, i) in result" :key="i">
-        <img
-          class="custom-background-position"
-          :src="`${$config.baseURLMedia}img/` + item.url"
-          height="600"
-          width="100%"
-        />
+        <div class="item">
+          <img loading="lazy" class="custom-background-position zoom-in-out-box"
+            :src="`${$config.baseURLMedia}img/` + item.url" height="600" width="100%" />
+        </div>
+
       </v-carousel-item>
     </v-carousel>
   </div>
@@ -51,8 +44,10 @@ export default {
 .theme--dark.v-btn.v-btn--icon {
   color: orange;
 }
+
 .custom-background-position {
-  background-position: top center; /* atau background-position: 0% 0%; atau background-position: 0 0; */
+  background-position: top center;
+  /* atau background-position: 0% 0%; atau background-position: 0 0; */
   background-repeat: no-repeat;
   background-size: cover;
 }

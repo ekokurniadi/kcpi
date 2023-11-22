@@ -9,134 +9,96 @@
               <div class="logo">
                 <nuxt-link to="/" class="d-block">
                   <div class="d-flex">
-                    <img
-                      loading="lazy"
-                      src="/assets/images/kcpi-single.png"
-                      style="width: 50px; height: 50px; margin-bottom: 10px"
-                      alt="Constra"
-                    />
+                    <img loading="lazy" src="/assets/images/kcpi-single.png"
+                      style="width: 50px; height: 50px; margin-bottom: 10px" alt="Constra" />
                     <span class="justify-content-center align-self-center">
-                      <h6 class="ml-3 mr-3 my-auto text-white">
+                      <h6 class="ml-3 mr-3 my-auto text-white" notranslate>
                         KNOWLEDGE CENTRE <br />PERUBAHAN IKLIM
                       </h6>
                     </span>
-                    <img
-                      loading="lazy"
-                      src="/assets/images/klhk-logo.png"
-                      style="width: 50px; height: 50px; margin-top: 5px"
-                      alt="Logo KCPI"
-                    />
+                    <img loading="lazy" src="/assets/images/klhk-logo.png"
+                      style="width: 50px; height: 50px; margin-top: 5px" alt="Logo KCPI" />
                   </div>
                 </nuxt-link>
               </div>
               <!-- logo end -->
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target=".navbar-collapse"
-                aria-controls="navbar-collapse"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
 
-              <div
-                id="navbar-collapse"
-                class="collapse navbar-collapse"
-                ref="navbars"
-              >
+              <div id="navbar-collapse" class="collapse navbar-collapse" ref="navbars">
                 <ul class="nav navbar-nav ml-auto">
                   <li :class="setActive('/', false)">
                     <nuxt-link class="nav-link" to="/">Beranda</nuxt-link>
                   </li>
 
                   <li :class="setActive('tentang', true)" id="dropdown-tentang">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"
-                      >Tentang <i class="fa fa-angle-down"></i
-                    ></a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">Tentang <i
+                        class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu" role="menu">
                       <li>
-                        <nuxt-link
-                          to="/tentang/knowledge-center"
-                          class="custom_collapse"
-                          >Knowledge Centre</nuxt-link
-                        >
+                        <nuxt-link to="/tentang/knowledge-center" class="custom_collapse">Knowledge Centre</nuxt-link>
                       </li>
                       <li>
-                        <nuxt-link
-                          to="/tentang/amanat-perubahan-iklim"
-                          class="custom_collapse"
-                          >Amanat Perubahan Iklim</nuxt-link
-                        >
+                        <nuxt-link to="/tentang/amanat-perubahan-iklim" class="custom_collapse">Amanat Perubahan
+                          Iklim</nuxt-link>
                       </li>
                     </ul>
                   </li>
 
                   <li :class="setActive('info', true)" id="dropdown-info">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"
-                      >Info Iklim <i class="fa fa-angle-down"></i
-                    ></a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">Info Iklim <i
+                        class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu" role="menu">
                       <li>
-                        <nuxt-link
-                          to="/info/mengenai-perubahan-iklim"
-                          class="custom_collapse"
-                          >Mengenai Perubahan Iklim</nuxt-link
-                        >
+                        <nuxt-link to="/info/mengenai-perubahan-iklim" class="custom_collapse">Mengenai Perubahan
+                          Iklim</nuxt-link>
                       </li>
                       <li>
-                        <nuxt-link
-                          to="/info/dampak-dan-fenomena"
-                          class="custom_collapse"
-                          >Dampak dan Fenomena</nuxt-link
-                        >
+                        <nuxt-link to="/info/dampak-dan-fenomena" class="custom_collapse">Dampak dan Fenomena</nuxt-link>
                       </li>
                     </ul>
                   </li>
 
-                  <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"
-                      >Aksi <i class="fa fa-angle-down"></i
-                    ></a>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">Aksi <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu" role="menu">
                       <li><nuxt-link to="/">Mitigasi</nuxt-link></li>
                       <li><nuxt-link to="/">Adaptasi</nuxt-link></li>
                       <li><nuxt-link to="/">REDD+</nuxt-link></li>
                       <li><nuxt-link to="/">Proklim</nuxt-link></li>
                     </ul>
-                  </li> -->
+                  </li>
 
                   <li :class="setActive('sumber-daya', true)" class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"
-                      >Sumber Daya <i class="fa fa-angle-down"></i
-                    ></a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">Sumber Daya <i
+                        class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu" role="menu">
                       <li><nuxt-link to="/sumber-daya/sumber-dana">Sumber Dana</nuxt-link></li>
                       <li>
-                        <nuxt-link to="/sumber-daya/peningkatan-kapasitas-dan-tenaga-ahli"
-                          >Peningkatan Kapasitas dan Tenaga Ahli
+                        <nuxt-link to="/sumber-daya/peningkatan-kapasitas-dan-tenaga-ahli">Peningkatan Kapasitas dan
+                          Tenaga Ahli
                         </nuxt-link>
                       </li>
                       <li><nuxt-link to="/sumber-daya/teknologi">Teknologi</nuxt-link></li>
                     </ul>
                   </li>
                   <li :class="setActive('/inovasi')">
-                    <nuxt-link class="nav-link" to="/inovasi"
-                      >Inovasi</nuxt-link
-                    >
+                    <nuxt-link class="nav-link" to="/inovasi">Inovasi</nuxt-link>
+                  </li>
+                  <li :class="setActive('/hasil-kerjasama')" class="nav-item">
+                    <nuxt-link class="nav-link" to="/hasil-kerjasama">Hasil Kerjasama</nuxt-link>
                   </li>
                   <li class="nav-item">
-                    <nuxt-link class="nav-link" to="/"
-                      >Hasil Kerjasama</nuxt-link
-                    >
+                    <nuxt-link class="nav-link" to="/">Profil Provinsi</nuxt-link>
                   </li>
                   <li class="nav-item">
-                    <nuxt-link class="nav-link" to="/"
-                      >Profil Provinsi</nuxt-link
-                    >
+                    <div class="nav-link" style="margin-top:10px ;">
+                      <div id="google_translate_element"></div>
+                    </div>
                   </li>
+
                 </ul>
               </div>
             </nav>
@@ -151,10 +113,14 @@
   </header>
   <!--/ Header end -->
 </template>
-<script>
+<script nonce="sha256-Ry3i6MeJc8/HIDbjIZbuRbYCVKa3EwIsvCwVEGmr2as=">
 export default {
   mounted() {
     this.removeClassActive()
+    this.$nextTick(() => {
+      this.googleTranslateInit();
+    });
+
   },
 
   methods: {
@@ -174,6 +140,62 @@ export default {
         return this.$route.fullPath == named ? 'nav-item active' : 'nav-item'
       }
     },
+    googleTranslateInit: function () {
+
+      let checkIfGoogleLoaded = setInterval(() => {
+
+        if (google.translate.TranslateElement != null) {
+          clearInterval(checkIfGoogleLoaded);
+
+          this.googleTranslateElement('google_translate_element');
+        }
+
+      }, 100);
+
+    },
+
+    googleTranslateElement: function (id) {
+      new google.translate.TranslateElement({
+        pageLanguage: 'gr',
+        includedLanguages: 'id,en',
+        defaultLanguage: 'gr', // Bahasa default yang ditampilkan
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false
+      }, id);
+    }
+
   },
 }
 </script>
+
+<style>
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+  visibility: hidden !important;
+  display: none !important;
+  height: 0px !important;
+  margin: 0 !important;
+}
+
+.VIpgJd-ZVi9od-vH1Gmf .indicator {
+  display: none;
+}
+
+.text {
+  color: red !important;
+}
+
+.goog-te-gadget img {
+  display: none !important;
+}
+
+.goog-te-gadget-simple {
+  background-color: white;
+  border-radius: 10px;
+  padding-left:10px;
+  padding-right:10px;
+  color: white;
+}
+
+.nav-link {
+  font-size: 13px !important;
+}
+</style>

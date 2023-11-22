@@ -5,6 +5,7 @@
 body {
   background: #fff;
   color: #555;
+  top: 0px !important;
 }
 
 body,
@@ -62,6 +63,22 @@ h5 {
 
 .alert .icon {
   margin-right: 15px;
+}
+
+/* Cutom animation */
+
+.zoom-in-out-box {
+  animation: zoom-in-zoom-out 15s linear infinite;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(1.5, 1.5);
+  }
 }
 
 /* Global styles
@@ -2516,6 +2533,7 @@ img.testimonial-thumb {
   text-transform: uppercase;
   font-size: 58px;
   font-weight: 900;
+  text-shadow:2px 2px #111;
 }
 @media (max-width: 767px) {
   .banner-title {

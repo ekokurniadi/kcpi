@@ -33,19 +33,12 @@
                       class="w-100"
                       :src="`${$config.baseURLMedia}img/` + data.image"
                       :alt="data.category"
-                      style="
-                        width: 100% !important;
-                        height: 250px !important;
-                        object-fit: cover;
-                        border-top-left-radius: 10px;
-                        border-top-right-radius: 10px;
-                      "
-                    />
+                      style="width: 100% !important;height: 250px !important;object-fit: cover;border-top-left-radius: 10px;border-top-right-radius: 10px;"/>
                   </div>
 
                   <div class="ts-service-info text-center ml-0">
                     <h3 class="service-box-title">
-                      <nuxt-link :to="'/detail-kategory/' + data.id">{{
+                      <nuxt-link :to="data.category == 'inovasi' ? '/inovasi': data.category =='sumber-daya' ? '/sumber-daya/sumber-dana' : '/aksi/mitigasi'">{{
                         data.category
                       }}</nuxt-link>
                     </h3>
@@ -57,7 +50,7 @@
                     <nuxt-link
                       class="btn btn-primary"
                       aria-label="service-details"
-                      :to="'/detail-kategory/' + data.id"
+                      :to="data.category.toLowerCase() == 'inovasi' ? '/inovasi': data.category.toLowerCase() =='sumber daya' ? '/sumber-daya/sumber-dana' : '/aksi/mitigasi'"
                     >
                       Read More</nuxt-link
                     >

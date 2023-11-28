@@ -3,8 +3,12 @@
     <v-carousel :show-arrows="false" :progress="true" cycle class="mt-5" hide-delimiter-background height="auto">
       <v-carousel-item v-for="(item, i) in result" :key="i">
         <div class="item">
+
           <img loading="lazy" class="custom-background-position zoom-in-out-box"
             :src="`${$config.baseURLMedia}img/` + item.url" height="600" width="100%" />
+          <div class="caption-item">
+            <h5 class="caption">{{ item.text }}</h5>
+          </div>
         </div>
 
       </v-carousel-item>
@@ -40,7 +44,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .theme--dark.v-btn.v-btn--icon {
   color: orange;
 }
@@ -50,5 +54,32 @@ export default {
   /* atau background-position: 0% 0%; atau background-position: 0 0; */
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.item {
+  position: relative;
+}
+
+.caption-item {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: -1px;
+  font-size: 18px;
+}
+
+.caption{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 46px;
+  color:white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -1;
+  font-style: normal;
 }
 </style>

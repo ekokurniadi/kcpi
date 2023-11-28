@@ -77,7 +77,8 @@
                 <div class="col-md-12">
                   <h3 class="widget-title">Survey</h3>
                   <div class="working-hours">
-                   <a href="" style="color: white;text-decoration: underline;">Klik disini untuk mengisi survey <i class="fas fa-external-link"></i></a>
+                    <a :href="surveyLink" target="_blank" style="color: white;text-decoration: underline;">Klik disini untuk mengisi survey <i
+                        class="fas fa-external-link"></i></a>
                   </div>
                 </div>
               </div>
@@ -85,32 +86,7 @@
                 <div class="col-md-12">
                   <h3 class="widget-title">Statistik Pengunjung</h3>
                   <div class="working-hours">
-                   <table>
-                    <tr>
-                      <td>Online </td>
-                      <td>&nbsp;</td>
-                      <td width="20px">:</td>
-                      <td style="color: orange;font-weight: 600;">10</td>
-                    </tr>
-                    <tr>
-                      <td>Total </td>
-                      <td>&nbsp;</td>
-                      <td width="20px">:</td>
-                      <td style="color: orange;font-weight: 600;">12.000</td>
-                    </tr>
-                    <tr>
-                      <td>Kemarin </td>
-                      <td>&nbsp;</td>
-                      <td width="20px">:</td>
-                      <td style="color: orange;font-weight: 600;">120</td>
-                    </tr>
-                    <tr>
-                      <td>Hari ini </td>
-                      <td>&nbsp;</td>
-                      <td width="20px">:</td>
-                      <td style="color: orange;font-weight: 600;">100</td>
-                    </tr>
-                   </table>
+                    <app-visitor-counter />
                   </div>
                 </div>
               </div>
@@ -134,6 +110,28 @@ import VisitorCounter from '@/components/VisitorCounter.vue'
 export default {
   components: {
     'app-visitor-counter': VisitorCounter,
+  },
+  data() {
+    return {
+      surveyLink: '',
+    }
+  },
+  mounted() {
+    this.getSurveyLink();
+  },
+  methods: {
+    getSurveyLink: async function () {
+      await this.$axios
+        .$get(`${this.$config.baseURL}/form_survey`)
+        .then((res) => {
+          let decrypt = this.$decryptFunc(res, 'form_survey')
+          this.surveyLink = decrypt.data[0].url
+
+        })
+        .catch((err) => {
+
+        })
+    }
   },
 }
 </script>

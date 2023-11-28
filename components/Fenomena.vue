@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section id="project-area" class="project-area solid-bg">
+    <section id="project-area" class="project-area solid-bg" style="background:url('/assets/images/bg2-paralax.png')">
       <div class="container">
         <div class="row text-center">
           <div class="col-lg-12">

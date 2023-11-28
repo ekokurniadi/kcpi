@@ -75,7 +75,9 @@ h5 {
   0% {
     transform: scale(1, 1);
   }
-
+  50% {
+    transform: scale(1.3, 1.3);
+  }
   100% {
     transform: scale(1.5, 1.5);
   }
@@ -1817,9 +1819,6 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   margin-top: 2px;
 }
 
-.ts-service-info {
-  margin-left: 30px;
-}
 .ts-service-info h3 {
   font-size: 16px;
 }

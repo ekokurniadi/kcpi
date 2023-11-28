@@ -11,11 +11,7 @@
             >
               {{ result.title }}
             </h3>
-            <img
-              class="img-fluid py-2"
-              :src="`${$config.baseURLMedia}img/` + result.image"
-              :alt="result.url_slug"
-            />
+           
             <div
               data-aos="fade-left"
               data-aos-duration="1000"

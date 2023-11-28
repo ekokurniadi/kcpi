@@ -61,10 +61,10 @@
                     </ul>
                   </li>
 
-                  <li class="nav-item dropdown">
+                  <li :class="setActive('aksi', true)" id="dropdown-aksi">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown">Aksi <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu" role="menu">
-                      <li><nuxt-link to="/">Mitigasi</nuxt-link></li>
+                      <li><nuxt-link to="/aksi/mitigasi">Mitigasi</nuxt-link></li>
                       <li><nuxt-link to="/">Adaptasi</nuxt-link></li>
                       <li><nuxt-link to="/">REDD+</nuxt-link></li>
                       <li><nuxt-link to="/">Proklim</nuxt-link></li>
@@ -84,14 +84,14 @@
                       <li><nuxt-link to="/sumber-daya/teknologi">Teknologi</nuxt-link></li>
                     </ul>
                   </li>
-                  <li :class="setActive('/inovasi')">
+                  <li :class="setActive('/inovasi',false)" class="nav-item">
                     <nuxt-link class="nav-link" to="/inovasi">Inovasi</nuxt-link>
                   </li>
-                  <li :class="setActive('/hasil-kerjasama')" class="nav-item">
+                  <li :class="setActive('/hasil-kerjasama',false)" class="nav-item">
                     <nuxt-link class="nav-link" to="/hasil-kerjasama">Hasil Kerjasama</nuxt-link>
                   </li>
-                  <li class="nav-item">
-                    <nuxt-link class="nav-link" to="/">Profil Provinsi</nuxt-link>
+                  <li :class="setActive('/profil-provinsi',false)" class="nav-item">
+                    <nuxt-link class="nav-link" to="/profil-provinsi">Profil Provinsi</nuxt-link>
                   </li>
                   <li class="nav-item">
                     <div class="nav-link" style="margin-top:10px ;">

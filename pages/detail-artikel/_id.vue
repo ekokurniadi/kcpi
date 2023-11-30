@@ -15,6 +15,7 @@
             <div
               data-aos="fade-left"
               data-aos-duration="1000"
+              style="text-align: justify;"
               v-html="result.content"
             ></div>
           </div>

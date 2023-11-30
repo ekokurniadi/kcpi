@@ -65,9 +65,12 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown">Aksi <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu" role="menu">
                       <li><nuxt-link to="/aksi/mitigasi">Mitigasi</nuxt-link></li>
-                      <li><nuxt-link to="/">Adaptasi</nuxt-link></li>
-                      <li><nuxt-link to="/">REDD+</nuxt-link></li>
-                      <li><nuxt-link to="/">Proklim</nuxt-link></li>
+                      <li><nuxt-link to="/aksi/adaptasi">Adaptasi</nuxt-link></li>
+                      <li><nuxt-link to="/aksi/redd">REDD+</nuxt-link></li>
+                      <li><nuxt-link to="/aksi/proklim">Proklim</nuxt-link></li>
+                      <li><nuxt-link to="/aksi/perjanjian-paris">Perjanjian Paris</nuxt-link></li>
+                      <li><nuxt-link to="/aksi/karhutla">Karhutla</nuxt-link></li>
+                      <li><nuxt-link to="/aksi/srn">SRN</nuxt-link></li>
                     </ul>
                   </li>
 

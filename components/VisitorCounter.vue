@@ -1,4 +1,5 @@
-<!-- components/VisitorCounter.vue -->
 <template>
- <div></div>
+    <div>
+        
+    </div>
 </template>

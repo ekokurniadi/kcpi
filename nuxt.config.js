@@ -1,5 +1,18 @@
 require('dotenv').config()
 export default {
+  render: {
+    csp: {
+      hashAlgorithm: 'sha256',
+      policies: {
+        'script-src': [
+          'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+          'https://static.elfsight.com/platform/platform.js'
+        ],
+        'report-uri': ['https://report.example.com/report-csp-violations']
+      },
+      addMeta: true
+    }
+  },
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
     baseURLMedia: process.env.BASE_URL_MEDIA,
@@ -62,7 +75,7 @@ export default {
       { src: '/assets/plugins/shuffle/shuffle.min.js' },
       { src: '/assets/js/script.js' },
       {
-        src: '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+        src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
       },
       {
         src: 'https://static.elfsight.com/platform/platform.js',
@@ -90,6 +103,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'nuxt-helmet'
   ],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -98,6 +112,11 @@ export default {
     proxy: true,
     credentials: false,
   },
+
+  helmet: {
+    // frameguard: true,
+  },
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

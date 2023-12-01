@@ -7,7 +7,7 @@
           <img loading="lazy" class="custom-background-position zoom-in-out-box"
             :src="`${$config.baseURLMedia}img/` + item.url" height="600" width="100%" />
           <div class="caption-item">
-            <h5 class="caption">{{ item.text }}</h5>
+            <h5 class="caption" v-html="item.text"></h5>
           </div>
         </div>
 
@@ -75,11 +75,25 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 46px;
+  font-size: 36px;
   color:white;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -1;
-  font-style: normal;
+  text-transform: capitalize;
+  line-height: 1;
+  text-align: center;
+}
+
+@media (max-width: 575px) {
+  .caption {
+    font-size: 18px;
+  }
+
+  .custom-background-position{
+    height: 300px !important;
+  }
+
+  .caption-item{
+    height: 300px !important;
+  }
 }
 </style>

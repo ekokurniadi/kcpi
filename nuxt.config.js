@@ -1,8 +1,5 @@
 require('dotenv').config()
 export default {
-  render: {
-    csp: true
-  },
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
     baseURLMedia: process.env.BASE_URL_MEDIA,
@@ -93,7 +90,6 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    'nuxt-helmet'
   ],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -102,11 +98,6 @@ export default {
     proxy: true,
     credentials: false,
   },
-
-  helmet: {
-    // frameguard: true,
-  },
-
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

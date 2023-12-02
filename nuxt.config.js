@@ -1,25 +1,12 @@
 require('dotenv').config()
+const PRIMARY_HOSTS = process.env.BASE_URL
 export default {
-  render: {
-    csp: {
-      hashAlgorithm: 'sha256',
-      policies: {
-        'script-src': [
-          'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
-          'https://static.elfsight.com/platform/platform.js'
-        ],
-        'report-uri': ['https://report.example.com/report-csp-violations']
-      },
-      addMeta: true
-    }
-  },
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
     baseURLMedia: process.env.BASE_URL_MEDIA,
     secretKey: process.env.SECRET_KEY,
     flavor: process.env.FLAVOR,
   },
-  productionSourceMap: true,
   head: {
     title: 'KCPI',
     htmlAttrs: {
@@ -27,6 +14,7 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
+      // { 'http-equiv': 'Content-Security-Policy',content:"default-src 'self'; img-src https://*; child-src 'none';script-src" },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
@@ -75,11 +63,17 @@ export default {
       { src: '/assets/plugins/shuffle/shuffle.min.js' },
       { src: '/assets/js/script.js' },
       {
+        hid: 'translate',
+        defer: true,
         src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+        nonce: 'sha256-Ry3i6MeJc8/HIDbjIZbuRbYCVKa3EwIsvCwVEGmr2as='
       },
       {
-        src: 'https://static.elfsight.com/platform/platform.js',
+        hid: 'visitor',
         defer: true,
+        src: 'https://static.elfsight.com/platform/platform.js',
+        nonce: 'sha256-Ry3i6MeJc8/HIDbjIZbuRbYCVKa3EwIsvCwVEGmr2as='
+
       }
 
     ],
@@ -103,7 +97,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    'nuxt-helmet'
+    'nuxt-helmet',
   ],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -114,16 +108,12 @@ export default {
   },
 
   helmet: {
-    // frameguard: true,
+    frameguard: true,
   },
 
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extend(config, ctx) {
-      if (ctx.isDev) {
-        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
-      }
-    }
+
   },
 }

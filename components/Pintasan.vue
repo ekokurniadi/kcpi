@@ -51,7 +51,7 @@
             </div>
             <div class="ts-service-box-info">
               <h3 class="service-box-title">
-                <nuxt-link to="">PUSTAKA</nuxt-link>
+                <nuxt-link to="/pustaka">PUSTAKA</nuxt-link>
               </h3>
               <p>
                 Kumpulan dokumen publikasi kliping dan lainnya dari berbagai
@@ -76,7 +76,7 @@
             </div>
             <div class="ts-service-box-info">
               <h3 class="service-box-title">
-                <nuxt-link to="">KAMUS ISTILAH</nuxt-link>
+                <nuxt-link to="/kamus-istilah">KAMUS ISTILAH</nuxt-link>
               </h3>
               <p>
                 Daftar Istilah dan singkatan terkait perubahan iklim yang di
@@ -93,7 +93,9 @@
                   class="img-fluid" />
               </div>
               <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">INFO PEGIAT</a></h3>
+                <h3 class="service-box-title">
+                  <nuxt-link to="info-pegiat">INFO PEGIAT</nuxt-link>
+                </h3>
                 <p>
                   Kontak informasi pegiat-pegiat yang terlibat dalam aksi-aksi
                   perubahan iklim di atas lahan di Indonesia

@@ -43,22 +43,24 @@
             </div>
           </div>
           <!-- Service 2 end -->
+          <nuxt-link to="/pustaka">
 
-          <div class="ts-service-box d-flex">
-            <div class="ts-service-box-img">
-              <img loading="lazy" src="/assets/images/icon-info-image/pustaka.png" alt="infografis" width="180"
-                class="img-fluid" />
+            <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="/assets/images/icon-info-image/pustaka.png" alt="infografis" width="180"
+                  class="img-fluid" />
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title">
+                  <nuxt-link to="/pustaka">PUSTAKA</nuxt-link>
+                </h3>
+                <p>
+                  Kumpulan dokumen publikasi kliping dan lainnya dari berbagai
+                  sumber terkait perubahan iklim.
+                </p>
+              </div>
             </div>
-            <div class="ts-service-box-info">
-              <h3 class="service-box-title">
-                <nuxt-link to="/pustaka">PUSTAKA</nuxt-link>
-              </h3>
-              <p>
-                Kumpulan dokumen publikasi kliping dan lainnya dari berbagai
-                sumber terkait perubahan iklim.
-              </p>
-            </div>
-          </div>
+          </nuxt-link>
           <!-- Service 3 end -->
         </div>
         <!-- Col end -->
@@ -69,24 +71,26 @@
         <!-- Col end -->
 
         <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
-          <div class="ts-service-box d-flex">
-            <div class="ts-service-box-img">
-              <img loading="lazy" src="/assets/images/icon-info-image/kamus-istilah.png" alt="infografis" width="180"
-                class="img-fluid" />
+          <nuxt-link to="/kamus-istilah">
+            <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="/assets/images/icon-info-image/kamus-istilah.png" alt="infografis" width="180"
+                  class="img-fluid" />
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title">
+                  <nuxt-link to="/kamus-istilah">KAMUS ISTILAH</nuxt-link>
+                </h3>
+                <p>
+                  Daftar Istilah dan singkatan terkait perubahan iklim yang di
+                  himpun dari berbagai sumber ilmiah dan ranah hukum
+                </p>
+              </div>
             </div>
-            <div class="ts-service-box-info">
-              <h3 class="service-box-title">
-                <nuxt-link to="/kamus-istilah">KAMUS ISTILAH</nuxt-link>
-              </h3>
-              <p>
-                Daftar Istilah dan singkatan terkait perubahan iklim yang di
-                himpun dari berbagai sumber ilmiah dan ranah hukum
-              </p>
-            </div>
-          </div>
+          </nuxt-link>
           <!-- Service 4 end -->
 
-          <nuxt-link to="/detail-pintasan/info-pegiat">
+          <nuxt-link to="/info-pegiat">
             <div class="ts-service-box d-flex">
               <div class="ts-service-box-img">
                 <img loading="lazy" src="/assets/images/icon-info-image/info-pegiat.png" alt="infografis" width="180"
@@ -94,7 +98,7 @@
               </div>
               <div class="ts-service-box-info">
                 <h3 class="service-box-title">
-                  <nuxt-link to="info-pegiat">INFO PEGIAT</nuxt-link>
+                  <nuxt-link to="/info-pegiat">INFO PEGIAT</nuxt-link>
                 </h3>
                 <p>
                   Kontak informasi pegiat-pegiat yang terlibat dalam aksi-aksi

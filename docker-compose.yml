@@ -1,0 +1,8 @@
+version: '3.5'
+
+services:
+  frontend-kcpi:
+    container_name: web-kcpi
+    image: web-kcpi:0.0.1
+    ports:
+      - 3800:3000

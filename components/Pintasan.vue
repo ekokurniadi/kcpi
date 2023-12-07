@@ -3,14 +3,14 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-12">
-          <h3 class="widget-title">Infografis dan Media Informasi</h3>
+          <h3 class="widget-title">Media Informasi</h3>
         </div>
       </div>
       <!--/ Title row end -->
 
       <div class="row">
-        <div class="col-lg-4">
-          <div class="ts-service-box d-flex">
+        <nuxt-link class="col-lg-4" to="/pustaka">
+          <!-- <div class="ts-service-box d-flex">
             <div class="ts-service-box-img">
               <img loading="lazy" src="/assets/images/icon-info-image/infografis.png" alt="infografis" width="180"
                 class="img-fluid" />
@@ -24,10 +24,10 @@
                 maupun analisa tentang perubahan.
               </p>
             </div>
-          </div>
+          </div> -->
           <!-- Service 1 end -->
 
-          <div class="ts-service-box d-flex">
+          <!-- <div class="ts-service-box d-flex">
             <div class="ts-service-box-img">
               <img loading="lazy" src="/assets/images/icon-info-image/video.png" alt="infografis" width="180"
                 class="img-fluid" />
@@ -41,10 +41,8 @@
                 analisa ilmiah tentang perubahan iklim
               </p>
             </div>
-          </div>
+          </div> -->
           <!-- Service 2 end -->
-          <nuxt-link to="/pustaka">
-
             <div class="ts-service-box d-flex">
               <div class="ts-service-box-img">
                 <img loading="lazy" src="/assets/images/icon-info-image/pustaka.png" alt="infografis" width="180"
@@ -60,18 +58,16 @@
                 </p>
               </div>
             </div>
-          </nuxt-link>
           <!-- Service 3 end -->
-        </div>
+        </nuxt-link>
         <!-- Col end -->
 
-        <div class="col-lg-4 text-center">
+        <!-- <div class="col-lg-4 text-center">
           <img loading="lazy" class="img-fluid" src="/assets/images/kcpi-single.png" alt="service-avater-image" />
-        </div>
+        </div> -->
         <!-- Col end -->
 
-        <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
-          <nuxt-link to="/kamus-istilah">
+        <nuxt-link class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0" to="/kamus-istilah">
             <div class="ts-service-box d-flex">
               <div class="ts-service-box-img">
                 <img loading="lazy" src="/assets/images/icon-info-image/kamus-istilah.png" alt="infografis" width="180"
@@ -87,10 +83,8 @@
                 </p>
               </div>
             </div>
-          </nuxt-link>
-          <!-- Service 4 end -->
-
-          <nuxt-link to="/info-pegiat">
+        </nuxt-link>
+        <nuxt-link class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0" to="/info-pegiat">
             <div class="ts-service-box d-flex">
               <div class="ts-service-box-img">
                 <img loading="lazy" src="/assets/images/icon-info-image/info-pegiat.png" alt="infografis" width="180"
@@ -106,9 +100,12 @@
                 </p>
               </div>
             </div>
-          </nuxt-link>
+          
+          <!-- Service 4 end -->
+
+
           <!-- Service 5 end -->
-        </div>
+        </nuxt-link>
         <!-- Col end -->
       </div>
       <!-- Content row end -->

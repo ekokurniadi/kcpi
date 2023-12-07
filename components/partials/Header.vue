@@ -8,17 +8,9 @@
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
               <div class="logo">
                 <nuxt-link to="/" class="d-block">
-                  <div class="d-flex">
-                    <img loading="lazy" src="/assets/images/kcpi-single.png"
-                      style="width: 50px; height: 50px; margin-bottom: 10px" alt="Constra" />
-                    <span class="justify-content-center align-self-center">
-                      <h6 class="ml-3 mr-3 my-auto text-white" notranslate>
-                        KNOWLEDGE CENTRE <br />PERUBAHAN IKLIM
-                      </h6>
-                    </span>
-                    <img loading="lazy" src="/assets/images/klhk-logo.png"
-                      style="width: 50px; height: 50px; margin-top: 5px" alt="Logo KCPI" />
-                  </div>
+                  <img loading="lazy" src="/assets/images/logo.png"
+                    class="w-100" alt="Constra" />
+                  
                 </nuxt-link>
               </div>
               <!-- logo end -->
@@ -94,7 +86,7 @@
                     <nuxt-link class="nav-link" to="/hasil-kerjasama">Hasil Kerjasama</nuxt-link>
                   </li>
                   <li :class="setActive('/profil-provinsi',false)" class="nav-item">
-                    <nuxt-link class="nav-link" to="/profil-provinsi">Profil Provinsi</nuxt-link>
+                    <nuxt-link class="nav-link" to="/profil-provinsi">Provinsi</nuxt-link>
                   </li>
                   <li class="nav-item">
                     <div class="nav-link" style="margin-top:10px ;">
@@ -171,6 +163,9 @@ export default {
 </script>
 
 <style>
+.nav-item a{
+  font-size: 12px !important;
+}
 .VIpgJd-ZVi9od-ORHb-OEVmcd {
   visibility: hidden !important;
   display: none !important;
@@ -198,7 +193,8 @@ export default {
   color: white;
 }
 
-.nav-link {
-  font-size: 13px !important;
+
+.custom-collapse{
+  font-size: 12px !important;
 }
 </style>

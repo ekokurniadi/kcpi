@@ -3,6 +3,12 @@ version: '3.5'
 services:
   frontend-kcpi:
     container_name: web-kcpi
-    image: web-kcpi:0.0.1
+    build: .
+    environment:
+      - BASE_URL=http://182.253.224.169:8080/web/v1
+      - BASE_URL_MEDIA=http://182.253.224.169:8080/
+      - SECRET_KEY=passphrasewhichneedstobe32bytes!
+      - FLAVOR=PRODUCTION
     ports:
       - 3800:3000
+    restart: unless-stopped

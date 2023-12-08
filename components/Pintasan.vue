@@ -9,7 +9,7 @@
       <!--/ Title row end -->
 
       <div class="row">
-        <nuxt-link class="col-lg-4" to="/pustaka">
+        <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
           <!-- <div class="ts-service-box d-flex">
             <div class="ts-service-box-img">
               <img loading="lazy" src="/assets/images/icon-info-image/infografis.png" alt="infografis" width="180"
@@ -43,6 +43,8 @@
             </div>
           </div> -->
           <!-- Service 2 end -->
+          <nuxt-link to="/pustaka">
+
             <div class="ts-service-box d-flex">
               <div class="ts-service-box-img">
                 <img loading="lazy" src="/assets/images/icon-info-image/pustaka.png" alt="infografis" width="180"
@@ -58,8 +60,9 @@
                 </p>
               </div>
             </div>
+          </nuxt-link>
           <!-- Service 3 end -->
-        </nuxt-link>
+        </div>
         <!-- Col end -->
 
         <!-- <div class="col-lg-4 text-center">
@@ -67,7 +70,8 @@
         </div> -->
         <!-- Col end -->
 
-        <nuxt-link class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0" to="/kamus-istilah">
+        <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
+          <nuxt-link to="/kamus-istilah">
             <div class="ts-service-box d-flex">
               <div class="ts-service-box-img">
                 <img loading="lazy" src="/assets/images/icon-info-image/kamus-istilah.png" alt="infografis" width="180"
@@ -83,8 +87,14 @@
                 </p>
               </div>
             </div>
-        </nuxt-link>
-        <nuxt-link class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0" to="/info-pegiat">
+          </nuxt-link>
+          <!-- Service 4 end -->
+
+
+          <!-- Service 5 end -->
+        </div>
+        <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
+          <nuxt-link to="/info-pegiat">
             <div class="ts-service-box d-flex">
               <div class="ts-service-box-img">
                 <img loading="lazy" src="/assets/images/icon-info-image/info-pegiat.png" alt="infografis" width="180"
@@ -100,12 +110,12 @@
                 </p>
               </div>
             </div>
-          
+          </nuxt-link>
           <!-- Service 4 end -->
 
 
           <!-- Service 5 end -->
-        </nuxt-link>
+        </div>
         <!-- Col end -->
       </div>
       <!-- Content row end -->

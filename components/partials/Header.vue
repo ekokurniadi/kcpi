@@ -85,9 +85,9 @@
                   <li :class="setActive('/hasil-kerjasama',false)" class="nav-item">
                     <nuxt-link class="nav-link" to="/hasil-kerjasama">Hasil Kerjasama</nuxt-link>
                   </li>
-                  <li :class="setActive('/profil-provinsi',false)" class="nav-item">
+                  <!-- <li :class="setActive('/profil-provinsi',false)" class="nav-item">
                     <nuxt-link class="nav-link" to="/profil-provinsi">Provinsi</nuxt-link>
-                  </li>
+                  </li> -->
                   <li class="nav-item">
                     <div class="nav-link" style="margin-top:10px ;">
                       <div id="google_translate_element"></div>

@@ -132,7 +132,7 @@
               />
             </div>
             <div v-else-if="item.type == 'video'" id="wrap">
-              <video controls width="100%" poster="/assets/images/app-logo.png">
+              <video controls width="100%" height="100%" poster="/assets/images/logo.png">
                 <source
                   :src="`${$config.baseURLMedia}video/` + item.media"
                   type="video/webm"

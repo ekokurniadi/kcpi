@@ -8,7 +8,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
               <div class="logo">
                 <nuxt-link to="/" class="d-block">
-                  <img loading="lazy" src="/assets/images/logo.png" class="w-100" alt="Constra" />
+                  <img loading="lazy" src="/assets/images/logo.png" class="w-100" alt="KCPI" />
 
                 </nuxt-link>
               </div>

@@ -8,9 +8,8 @@
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
               <div class="logo">
                 <nuxt-link to="/" class="d-block">
-                  <img loading="lazy" src="/assets/images/logo.png"
-                    class="w-100" alt="Constra" />
-                  
+                  <img loading="lazy" src="/assets/images/logo.png" class="w-100" alt="Constra" />
+
                 </nuxt-link>
               </div>
               <!-- logo end -->
@@ -79,29 +78,33 @@
                       <li><nuxt-link to="/sumber-daya/teknologi">Teknologi</nuxt-link></li>
                     </ul>
                   </li>
-                  <li :class="setActive('/inovasi',false)" class="nav-item">
+                  <li :class="setActive('/inovasi', false)" class="nav-item">
                     <nuxt-link class="nav-link" to="/inovasi">Inovasi</nuxt-link>
                   </li>
-                  <li :class="setActive('/hasil-kerjasama',false)" class="nav-item">
+                  <li :class="setActive('/hasil-kerjasama', false)" class="nav-item">
                     <nuxt-link class="nav-link" to="/hasil-kerjasama">Hasil Kerjasama</nuxt-link>
                   </li>
                   <!-- <li :class="setActive('/profil-provinsi',false)" class="nav-item">
                     <nuxt-link class="nav-link" to="/profil-provinsi">Provinsi</nuxt-link>
                   </li> -->
                   <li class="nav-item">
-                    <div class="nav-link" style="margin-top:10px ;">
-                      <div id="google_translate_element"></div>
+                    <div class="nav-link" style="margin-top:10px;width:120px;">
+
                     </div>
                   </li>
 
                 </ul>
               </div>
+
             </nav>
           </div>
           <!--/ Col end -->
         </div>
         <!--/ Row end -->
       </div>
+      <div class="gtranslate_wrapper"></div>
+
+      <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
       <!--/ Container end -->
     </div>
     <!--/ Navigation end -->
@@ -139,7 +142,7 @@ export default {
 
       let checkIfGoogleLoaded = setInterval(() => {
 
-        if (google.translate.TranslateElement != null) {
+        if (gtranslateSettings != null) {
           clearInterval(checkIfGoogleLoaded);
 
           this.googleTranslateElement('google_translate_element');
@@ -149,13 +152,8 @@ export default {
 
     },
 
-    googleTranslateElement: function (id) {
-      new google.translate.TranslateElement({
-        pageLanguage: 'gr',
-        includedLanguages: 'id,en',
-        defaultLanguage: 'gr', // Bahasa default yang ditampilkan
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false
-      }, id);
+    googleTranslateElement: function () {
+      window.gtranslateSettings = { "default_language": "en", "languages": ["en", "id"], "wrapper_selector": ".gtranslate_wrapper", "switcher_horizontal_position": "right", "switcher_vertical_position": "top", "float_switcher_open_direction": "bottom", "flag_style": "3d" }
     }
 
   },
@@ -163,9 +161,10 @@ export default {
 </script>
 
 <style>
-.nav-item a{
+.nav-item a {
   font-size: 12px !important;
 }
+
 .VIpgJd-ZVi9od-ORHb-OEVmcd {
   visibility: hidden !important;
   display: none !important;
@@ -188,13 +187,27 @@ export default {
 .goog-te-gadget-simple {
   background-color: white;
   border-radius: 10px;
-  padding-left:10px;
-  padding-right:10px;
+  padding-left: 10px;
+  padding-right: 10px;
   color: white;
 }
 
 
-.custom-collapse{
+.custom-collapse {
   font-size: 12px !important;
+}
+
+#gt_float_wrapper {
+  left: auto !important;
+  right: 15px !important;
+  top: 20px !important;
+}
+
+@media (max-width:576px) {
+  #gt_float_wrapper {
+    left: auto !important;
+    right: 15px !important;
+    top: 70px !important;
+  }
 }
 </style>

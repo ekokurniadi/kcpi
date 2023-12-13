@@ -68,6 +68,23 @@ export default {
         src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
         nonce: 'sha256-Ry3i6MeJc8/HIDbjIZbuRbYCVKa3EwIsvCwVEGmr2as='
       },
+
+      {
+        innerHTML: `window.gtranslateSettings = {
+            "default_language": "en",
+            "languages": ["en", "id"],
+            "wrapper_selector": ".gtranslate_wrapper",
+            "switcher_horizontal_position": "right",
+            "switcher_vertical_position": "top",
+            "float_switcher_open_direction": "bottom",
+            "flag_style": "2d"
+          };`
+      },
+      {
+        src: "https://cdn.gtranslate.net/widgets/latest/float.js",
+        defer: true
+      },
+
       {
         hid: 'visitor',
         defer: true,
@@ -85,7 +102,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/decrypt.js', '~/plugins/aos.js',{ src: '~/plugins/vue-good-table', ssr: false },],
+  plugins: ['~/plugins/decrypt.js', '~/plugins/aos.js', { src: '~/plugins/vue-good-table', ssr: false },],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

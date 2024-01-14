@@ -62,16 +62,16 @@ export default {
       { src: '/assets/plugins/colorbox/jquery.colorbox.js' },
       { src: '/assets/plugins/shuffle/shuffle.min.js' },
       { src: '/assets/js/script.js' },
-      {
-        hid: 'translate',
-        defer: true,
-        src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
-        nonce: 'sha256-Ry3i6MeJc8/HIDbjIZbuRbYCVKa3EwIsvCwVEGmr2as='
-      },
+      // {
+      //   hid: 'translate',
+      //   defer: true,
+      //   src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+      //   nonce: 'sha256-Ry3i6MeJc8/HIDbjIZbuRbYCVKa3EwIsvCwVEGmr2as='
+      // },
 
       {
         innerHTML: `window.gtranslateSettings = {
-            "default_language": "en",
+            "default_language": "id",
             "languages": ["en", "id"],
             "wrapper_selector": ".gtranslate_wrapper",
             "switcher_horizontal_position": "right",

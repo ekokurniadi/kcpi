@@ -115,10 +115,7 @@
 export default {
   mounted() {
     this.removeClassActive()
-    this.$nextTick(() => {
-      this.googleTranslateInit();
-    });
-
+    
   },
 
   methods: {
@@ -153,7 +150,7 @@ export default {
     },
 
     googleTranslateElement: function () {
-      window.gtranslateSettings = { "default_language": "en", "languages": ["en", "id"], "wrapper_selector": ".gtranslate_wrapper", "switcher_horizontal_position": "right", "switcher_vertical_position": "top", "float_switcher_open_direction": "bottom", "flag_style": "3d" }
+      window.gtranslateSettings = { "default_language": "id", "languages": ["en", "id"], "wrapper_selector": ".gtranslate_wrapper", "switcher_horizontal_position": "right", "switcher_vertical_position": "top", "float_switcher_open_direction": "bottom", "flag_style": "2d" }
     }
 
   },
@@ -199,15 +196,29 @@ export default {
 
 #gt_float_wrapper {
   left: auto !important;
-  right: 15px !important;
-  top: 20px !important;
+  right: 50px !important;
+  top: 25px !important;
+}
+
+
+.gt_float_switcher .gt-selected .gt-current-lang {
+  padding: 3px 3px !important;
+}
+
+.gt_float_switcher img {
+  width: 25px;
+}
+
+.gt_float_switcher .gt-selected .gt-current-lang span.gt-lang-code {
+  top:0px;
+  font-size: 15px;
 }
 
 @media (max-width:576px) {
   #gt_float_wrapper {
     left: auto !important;
-    right: 15px !important;
-    top: 70px !important;
+    right: 50px !important;
+    top: 75px !important;
   }
 }
 </style>

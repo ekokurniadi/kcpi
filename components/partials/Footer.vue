@@ -17,14 +17,14 @@
               <div class="footer-social">
                 <ul>
                   <li>
-                    <a :href="dataFooter.facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a :href="dataFooter.fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                   </li>
                   <li>
                     <a :href="dataFooter.twitter" aria-label="Twitter">   <img loading="lazy" src="/assets/images/logo-x-twitter.png"
                   style="width: 20px; height: 18px;" alt="KCPI" /></a>
                   </li>
                   <li>
-                    <a :href="dataFooter.instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a :href="dataFooter.ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                   </li>
                   <li>
                     <a :href="dataFooter.youtube" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
@@ -63,10 +63,10 @@
             <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
               <div class="row mb-2">
                 <div class="col-md-12">
-                  <h3 class="widget-title">Survey</h3>
+                  <h3 class="widget-title">Survei Kepuasan</h3>
                   <div class="working-hours">
-                    <a :href="surveyLink" target="_blank" style="color: white;text-decoration: underline;">Klik disini untuk mengisi survey <i
-                        class="fas fa-external-link"></i></a>
+                    <nuxt-link to="/survey" style="color: white;text-decoration: underline;">Link Survei Kepuasan Pengunjung <i
+                        class="fas fa-external-link"></i></nuxt-link>
                   </div>
                 </div>
               </div>
@@ -104,8 +104,8 @@ export default {
       surveyLink: '',
       dataFooter:{
         alamat:'Gedung Manggala Wanabakti Blok I lt. 2, Jl. Jenderal Gatot Subroto - Jakarta 10270, Po Box 6505, Indonesia',
-        facebook:'https://facebook.com',
-        instagram:'https://instagram.com',
+        fb:'https://facebook.com',
+        ig:'https://instagram.com',
         twitter:'https://twitter.com',
         youtube:'https://youtube.com',
       }
@@ -134,6 +134,7 @@ export default {
         .then((res) => {
           let decrypt = this.$decryptFunc(res, 'setting')
           this.dataFooter = decrypt.data[0]
+          console.log(res)
         })
         .catch((err) => {
 

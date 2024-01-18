@@ -104,7 +104,7 @@
       </div>
       <div class="gtranslate_wrapper"></div>
 
-      <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+      <script src="assets/float.js" defer></script>
       <!--/ Container end -->
     </div>
     <!--/ Navigation end -->

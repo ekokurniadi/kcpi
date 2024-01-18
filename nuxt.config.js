@@ -81,7 +81,7 @@ export default {
           };`
       },
       {
-        src: "https://cdn.gtranslate.net/widgets/latest/float.js",
+        src: "assets/float.js",
         defer: true
       },
 

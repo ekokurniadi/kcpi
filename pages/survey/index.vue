@@ -610,6 +610,12 @@
                 <span>Sangat Tidak Puas</span>
               </p>
             </div>
+            <div class="form-group" v-if="errors.length">
+              <b>Please correct the following error(s):</b>
+              <ul>
+                <li v-for="error in errors" style="color: red">{{ error }}</li>
+              </ul>
+            </div>
             <div class="form-group">
               <button
                 class="btn btn-primary btn-md"
@@ -633,6 +639,7 @@ export default {
   },
   data() {
     return {
+      errors: [],
       form: {
         nama: '',
         jenis_kelamin: '',
@@ -660,13 +667,37 @@ export default {
   },
   methods: {
     save: async function () {
-      await this.$axios
-        .post('http://localhost:9000/web/v1/survey_kepuasan', this.form)
-        .then((_) => {
-          this.form = {}
-          alert('Thank you for submit your feedback')
-        })
-        .catch((err) => console.log(err))
+      if (
+        this.form.email &&
+        this.form.nama &&
+        this.form.jenis_kelamin &&
+        this.form.email.includes('@')
+      ) {
+        await this.$axios
+          .$post(`${this.$config.baseURL}/survey_kepuasan`, this.form)
+          .then((_) => {
+            this.form = {}
+            alert('Thank you for submit your feedback')
+          })
+          .catch((err) => console.log(err))
+      } else {
+        this.errors = []
+
+        if (!this.form.email) {
+          this.errors.push('Email is required')
+        }
+
+        if (!this.form.email.includes('@')) {
+          this.errors.push('Email format is invalid')
+        }
+
+        if (!this.form.nama) {
+          this.errors.push('Nama is required')
+        }
+        if (!this.form.jenis_kelamin) {
+          this.errors.push('Jenis Kelamin is required')
+        }
+      }
     },
   },
 }

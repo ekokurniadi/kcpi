@@ -9,7 +9,7 @@
       <!--/ Title row end -->
 
       <div class="row">
-        <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
+        <div class="col-lg-3 mt-5 mt-lg-0 mb-4 mb-lg-0">
           <!-- <div class="ts-service-box d-flex">
             <div class="ts-service-box-img">
               <img loading="lazy" src="/assets/images/icon-info-image/infografis.png" alt="infografis" width="180"
@@ -70,7 +70,7 @@
         </div> -->
         <!-- Col end -->
 
-        <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
+        <div class="col-lg-3 mt-5 mt-lg-0 mb-4 mb-lg-0">
           <nuxt-link to="/kamus-istilah">
             <div class="ts-service-box d-flex">
               <div class="ts-service-box-img">
@@ -93,7 +93,7 @@
 
           <!-- Service 5 end -->
         </div>
-        <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
+        <div class="col-lg-3 mt-5 mt-lg-0 mb-4 mb-lg-0">
           <nuxt-link to="/info-pegiat">
             <div class="ts-service-box d-flex">
               <div class="ts-service-box-img">
@@ -107,6 +107,29 @@
                 <p>
                   Kontak informasi pegiat-pegiat yang terlibat dalam aksi-aksi
                   perubahan iklim di atas lahan di Indonesia
+                </p>
+              </div>
+            </div>
+          </nuxt-link>
+          <!-- Service 4 end -->
+
+
+          <!-- Service 5 end -->
+        </div>
+
+        <div class="col-lg-3 mt-5 mt-lg-0 mb-4 mb-lg-0">
+          <nuxt-link to="/video">
+            <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="/assets/images/icon-info-image/video.png" alt="infografis" width="180"
+                  class="img-fluid" />
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title">
+                  <nuxt-link to="/video">Video</nuxt-link>
+                </h3>
+                <p>
+                  Kumpulan video tentang dampak, penyebab dan pengertian maupun analisa ilmiah tentang perubahan iklim
                 </p>
               </div>
             </div>

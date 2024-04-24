@@ -88,7 +88,7 @@
                     <nuxt-link class="nav-link" to="/profil-provinsi">Provinsi</nuxt-link>
                   </li> -->
                   <li class="nav-item">
-                    <div class="nav-link" style="margin-top:10px;width:120px;">
+                    <div class="nav-link" style="margin-top:10px;width:100px;">
 
                     </div>
                   </li>
@@ -206,12 +206,12 @@ export default {
 }
 
 .gt_float_switcher img {
-  width: 25px;
+  width: 20px;
 }
 
 .gt_float_switcher .gt-selected .gt-current-lang span.gt-lang-code {
   top:0px;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 @media (max-width:576px) {

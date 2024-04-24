@@ -1862,7 +1862,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   width: 100%;
   border-bottom: 3px solid #ffb600;
 }
-.shuffle-btn-group label {
+.shuffle-btn-group span {
   display: inline-block;
   color: #212121;
   font-size: 14px;
@@ -1874,11 +1874,11 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   cursor: pointer;
   margin: 0;
 }
-.shuffle-btn-group label.active {
+.shuffle-btn-group span.active {
   color: #212121;
   background: #ffb600;
 }
-.shuffle-btn-group label input {
+.shuffle-btn-group span input {
   display: none;
 }
 

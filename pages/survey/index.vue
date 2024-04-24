@@ -9,7 +9,7 @@
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold">Nama</label>
+              <label class="font-weight-bold">Nama</label>
               <input
                 type="text"
                 class="form-control"
@@ -20,12 +20,12 @@
               />
             </div>
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold">Jenis Kelamin</label>
+              <label class="font-weight-bold">Jenis Kelamin</label>
               <p>
                 <input
                   type="radio"
                   name="jenis_kelamin"
-                  id="jenis_kelamin"
+                 
                   value="Laki-Laki"
                   v-model="form.jenis_kelamin"
                 />
@@ -35,7 +35,7 @@
                 <input
                   type="radio"
                   name="jenis_kelamin"
-                  id="jenis_kelamin"
+                 
                   value="Perempuan"
                   v-model="form.jenis_kelamin"
                 />
@@ -43,12 +43,12 @@
               </p>
             </div>
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold">Usia</label>
+              <label class="font-weight-bold">Usia</label>
               <p>
                 <input
                   type="radio"
                   name="usia"
-                  id="usia"
+                 
                   value="13 - 17 Tahun"
                   v-model="form.usia"
                 />
@@ -58,7 +58,7 @@
                 <input
                   type="radio"
                   name="usia"
-                  id="usia"
+                 
                   value="18 - 24 Tahun"
                   v-model="form.usia"
                 />
@@ -68,7 +68,7 @@
                 <input
                   type="radio"
                   name="usia"
-                  id="usia"
+                 
                   value="25 - 39 Tahun"
                   v-model="form.usia"
                 />
@@ -78,7 +78,7 @@
                 <input
                   type="radio"
                   name="usia"
-                  id="usia"
+                 
                   value="40 - 54 Tahun"
                   v-model="form.usia"
                 />
@@ -88,7 +88,7 @@
                 <input
                   type="radio"
                   name="usia"
-                  id="usia"
+                 
                   value="55 Tahun ke atas"
                   v-model="form.usia"
                 />
@@ -96,7 +96,7 @@
               </p>
             </div>
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold">Pekerjaan</label>
+              <label class="font-weight-bold">Pekerjaan</label>
               <input
                 type="text"
                 class="form-control"
@@ -107,7 +107,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold">Alamat Email</label>
+              <label class="font-weight-bold">Alamat Email</label>
               <input
                 type="text"
                 name="email"
@@ -123,7 +123,7 @@
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold"
+              <label class="font-weight-bold"
                 >Bagaimana Anda mengetahui website KCPI KLHK?</label
               >
               <p>
@@ -168,14 +168,14 @@
               </p>
             </div>
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold"
+              <label class="font-weight-bold"
                 >Seberapa sering Anda mengunjungi website ini?</label
               >
               <p>
                 <input
                   type="radio"
                   name="kunjungan"
-                  id="kunjungan"
+                 
                   value="Setiap Hari"
                   v-model="form.kunjungan"
                 />
@@ -185,7 +185,7 @@
                 <input
                   type="radio"
                   name="kunjungan"
-                  id="kunjungan"
+                 
                   value="Beberapa kali seminggu"
                   v-model="form.kunjungan"
                 />
@@ -195,7 +195,7 @@
                 <input
                   type="radio"
                   name="kunjungan"
-                  id="kunjungan"
+                 
                   value="Beberapa kali sebulan"
                   v-model="form.kunjungan"
                 />
@@ -205,7 +205,7 @@
                 <input
                   type="radio"
                   name="kunjungan"
-                  id="kunjungan"
+                 
                   value="Jarang"
                   v-model="form.kunjungan"
                 />
@@ -213,7 +213,7 @@
               </p>
             </div>
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold"
+              <label class="font-weight-bold"
                 >Tujuan utama Anda mengunjungi website ini adalah:</label
               >
               <p>
@@ -263,14 +263,14 @@
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold"
+              <label class="font-weight-bold"
                 >Bagaimana Anda menilai tampilan dan desain website?</label
               >
               <p>
                 <input
                   type="radio"
                   name="nilai_website"
-                  id="nilai_website"
+                 
                   value="Sangat Memuaskan"
                   v-model="form.nilai_website"
                 />
@@ -280,7 +280,7 @@
                 <input
                   type="radio"
                   name="nilai_website"
-                  id="nilai_website"
+                 
                   value="Memuaskan"
                   v-model="form.nilai_website"
                 />
@@ -290,7 +290,7 @@
                 <input
                   type="radio"
                   name="nilai_website"
-                  id="nilai_website"
+                 
                   value="Cukup"
                   v-model="form.nilai_website"
                 />
@@ -300,7 +300,7 @@
                 <input
                   type="radio"
                   name="nilai_website"
-                  id="nilai_website"
+                 
                   value="Kurang"
                   v-model="form.nilai_website"
                 />
@@ -310,7 +310,7 @@
                 <input
                   type="radio"
                   name="nilai_website"
-                  id="nilai_website"
+                 
                   value="Sangat Kurang"
                   v-model="form.nilai_website"
                 />
@@ -318,7 +318,7 @@
               </p>
             </div>
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold"
+              <label class="font-weight-bold"
                 >Seberapa mudah menavigasi dan menemukan informasi di
                 website?</label
               >
@@ -326,7 +326,7 @@
                 <input
                   type="radio"
                   name="nilai_website_kemudahan_navigasi"
-                  id="nilai_website_kemudahan_navigasi"
+                
                   value="Sangat Mudah"
                   v-model="form.nilai_website_kemudahan_navigasi"
                 />
@@ -336,7 +336,7 @@
                 <input
                   type="radio"
                   name="nilai_website_kemudahan_navigasi"
-                  id="nilai_website_kemudahan_navigasi"
+                
                   value="Mudah"
                   v-model="form.nilai_website_kemudahan_navigasi"
                 />
@@ -346,7 +346,7 @@
                 <input
                   type="radio"
                   name="nilai_website_kemudahan_navigasi"
-                  id="nilai_website_kemudahan_navigasi"
+                
                   value="Cukup Sulit"
                   v-model="form.nilai_website_kemudahan_navigasi"
                 />
@@ -356,7 +356,7 @@
                 <input
                   type="radio"
                   name="nilai_website_kemudahan_navigasi"
-                  id="nilai_website_kemudahan_navigasi"
+                
                   value="Sulit"
                   v-model="form.nilai_website_kemudahan_navigasi"
                 />
@@ -366,7 +366,7 @@
                 <input
                   type="radio"
                   name="nilai_website_kemudahan_navigasi"
-                  id="nilai_website_kemudahan_navigasi"
+                
                   value="Sangat Sulit"
                   v-model="form.nilai_website_kemudahan_navigasi"
                 />
@@ -374,7 +374,7 @@
               </p>
             </div>
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold"
+              <label class="font-weight-bold"
                 >Bagaimana kualitas konten atau informasi yang
                 disediakan?</label
               >
@@ -382,7 +382,7 @@
                 <input
                   type="radio"
                   name="nilai_website_kualitas_konten"
-                  id="nilai_website_kualitas_konten"
+                 
                   value="Sangat Berkualitas"
                   v-model="form.nilai_website_kualitas_konten"
                 />
@@ -392,7 +392,7 @@
                 <input
                   type="radio"
                   name="nilai_website_kualitas_konten"
-                  id="nilai_website_kualitas_konten"
+                 
                   value="Berkualitas"
                   v-model="form.nilai_website_kualitas_konten"
                 />
@@ -402,7 +402,7 @@
                 <input
                   type="radio"
                   name="nilai_website_kualitas_konten"
-                  id="nilai_website_kualitas_konten"
+                 
                   value="Cukup"
                   v-model="form.nilai_website_kualitas_konten"
                 />
@@ -412,7 +412,7 @@
                 <input
                   type="radio"
                   name="nilai_website_kualitas_konten"
-                  id="nilai_website_kualitas_konten"
+                 
                   value="Kurang"
                   v-model="form.nilai_website_kualitas_konten"
                 />
@@ -422,7 +422,7 @@
                 <input
                   type="radio"
                   name="nilai_website_kualitas_konten"
-                  id="nilai_website_kualitas_konten"
+                 
                   value="Sangat Kurang"
                   v-model="form.nilai_website_kualitas_konten"
                 />
@@ -430,14 +430,14 @@
               </p>
             </div>
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold"
+              <label class="font-weight-bold"
                 >Apakah website ini memuat informasi terkini dan relevan?</label
               >
               <p>
                 <input
                   type="radio"
                   name="nilai_website_info_aktual"
-                  id="nilai_website_info_aktual"
+                 
                   value="Selalu"
                   v-model="form.nilai_website_info_aktual"
                 />
@@ -447,7 +447,7 @@
                 <input
                   type="radio"
                   name="nilai_website_info_aktual"
-                  id="nilai_website_info_aktual"
+                 
                   value="Sering"
                   v-model="form.nilai_website_info_aktual"
                 />
@@ -457,7 +457,7 @@
                 <input
                   type="radio"
                   name="nilai_website_info_aktual"
-                  id="nilai_website_info_aktual"
+                 
                   value="Kadang-Kadang"
                   v-model="form.nilai_website_info_aktual"
                 />
@@ -467,7 +467,7 @@
                 <input
                   type="radio"
                   name="nilai_website_info_aktual"
-                  id="nilai_website_info_aktual"
+                 
                   value="Jarang"
                   v-model="form.nilai_website_info_aktual"
                 />
@@ -477,7 +477,7 @@
                 <input
                   type="radio"
                   name="nilai_website_info_aktual"
-                  id="nilai_website_info_aktual"
+                 
                   value="Tidak Pernah"
                   v-model="form.nilai_website_info_aktual"
                 />
@@ -485,7 +485,7 @@
               </p>
             </div>
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold"
+              <label class="font-weight-bold"
                 >Apakah Anda mengalami kesulitan teknis saat mengunjungi
                 website?</label
               >
@@ -493,7 +493,7 @@
                 <input
                   type="radio"
                   name="nilai_website_gangguan_teknis"
-                  id="nilai_website_gangguan_teknis"
+              
                   value="Sering"
                   v-model="form.nilai_website_gangguan_teknis"
                 />
@@ -503,7 +503,7 @@
                 <input
                   type="radio"
                   name="nilai_website_gangguan_teknis"
-                  id="nilai_website_gangguan_teknis"
+              
                   value="Kadang-Kadang"
                   v-model="form.nilai_website_gangguan_teknis"
                 />
@@ -513,7 +513,7 @@
                 <input
                   type="radio"
                   name="nilai_website_gangguan_teknis"
-                  id="nilai_website_gangguan_teknis"
+              
                   value="Jarang"
                   v-model="form.nilai_website_gangguan_teknis"
                 />
@@ -523,7 +523,7 @@
                 <input
                   type="radio"
                   name="nilai_website_gangguan_teknis"
-                  id="nilai_website_gangguan_teknis"
+              
                   value="Tidak Pernah"
                   v-model="form.nilai_website_gangguan_teknis"
                 />
@@ -536,7 +536,7 @@
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold"
+              <label class="font-weight-bold"
                 >Apa saran Anda untuk meningkatkan kualitas website KCPI
                 KLHK?</label
               >
@@ -555,7 +555,7 @@
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <label for="Nama" class="font-weight-bold"
+              <label class="font-weight-bold"
                 >Secara keseluruhan, seberapa puas Anda dengan website KCPI
                 KLHK?</label
               >
@@ -563,7 +563,7 @@
                 <input
                   type="radio"
                   name="kesimpulan"
-                  id="kesimpulan"
+                 
                   value="Sangat Puas"
                   v-model="form.kesimpulan"
                 />
@@ -573,7 +573,7 @@
                 <input
                   type="radio"
                   name="kesimpulan"
-                  id="kesimpulan"
+                 
                   value="Puas"
                   v-model="form.kesimpulan"
                 />
@@ -583,7 +583,7 @@
                 <input
                   type="radio"
                   name="kesimpulan"
-                  id="kesimpulan"
+                 
                   value="Netral"
                   v-model="form.kesimpulan"
                 />
@@ -593,7 +593,7 @@
                 <input
                   type="radio"
                   name="kesimpulan"
-                  id="kesimpulan"
+                 
                   value="Tidak Puas"
                   v-model="form.kesimpulan"
                 />
@@ -603,7 +603,7 @@
                 <input
                   type="radio"
                   name="kesimpulan"
-                  id="kesimpulan"
+                 
                   value="Sangat Tidak Puas"
                   v-model="form.kesimpulan"
                 />

@@ -17,14 +17,13 @@
       <div class="row">
         <div class="col-12" data-aos="fade-left" data-aos-duration="1000">
           <div class="shuffle-btn-group">
-            <label
+            <span
               v-for="(cat, index) in categories"
               :class="selectedCategories == index ? 'active' : ''"
-              for="cat.category"
               @click="setSelectedCategories(index)"
             >
               {{ cat.category }}
-            </label>
+            </span>
           </div>
 
           <div class="row">

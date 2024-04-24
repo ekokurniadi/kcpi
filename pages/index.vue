@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     onKeydown: function (e) {
-      e.preventDefault()
+      // e.preventDefault()
     },
   },
 }

@@ -54,14 +54,13 @@
         <div class="row">
           <div class="col-12" data-aos="fade-left" data-aos-duration="1000">
             <div class="shuffle-btn-group">
-              <label
+              <span
                 v-for="(cat, index) in categories"
                 :class="selectedCategories == index ? 'active' : ''"
-                for="cat.category"
                 @click="setSelectedCategories(index)"
               >
                 {{ cat.category }}
-              </label>
+              </span>
             </div>
 
             <div class="row">
@@ -70,7 +69,7 @@
                 v-for="artikel in artikels"
                 data-aos="fade-right"
                 data-aos-duration="1000"
-                v-if="artikel.publish=='y'"
+                v-if="artikel.publish == 'y'"
               >
                 <div class="ts-service-box">
                   <div class="ts-service-image-wrapper">
@@ -132,7 +131,12 @@
               />
             </div>
             <div v-else-if="item.type == 'video'" id="wrap">
-              <video controls width="100%" height="100%" poster="/assets/images/logo.png">
+              <video
+                controls
+                width="100%"
+                height="100%"
+                poster="/assets/images/logo.png"
+              >
                 <source
                   :src="`${$config.baseURLMedia}video/` + item.media"
                   type="video/webm"

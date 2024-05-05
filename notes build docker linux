@@ -1,4 +1,4 @@
 docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t ekokurniadi/web-kcpi:0.0.1 --push .
 
 docker build --tag ekokurniadi/web-kcpi:0.0.4 --push .
-docker build --tag ekokurniadi/admin-panel-kcpi:v1.3 --push .
+docker build --tag ekokurniadi/admin-panel-kcpi:v1.5 --push .

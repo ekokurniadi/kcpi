@@ -21,12 +21,12 @@
               <div class="footer-social">
                 <ul>
                   <li>
-                    <a :href="dataFooter.fb" aria-label="Facebook"
+                    <a :href="dataFooter.fb" target="_blank" aria-label="Facebook"
                       ><i class="fab fa-facebook-f"></i
                     ></a>
                   </li>
                   <li>
-                    <a :href="dataFooter.twitter" aria-label="Twitter">
+                    <a :href="dataFooter.twitter" target="_blank" aria-label="Twitter">
                       <img
                         loading="lazy"
                         src="/assets/images/logo-x-twitter.png"
@@ -35,13 +35,18 @@
                     /></a>
                   </li>
                   <li>
-                    <a :href="dataFooter.ig" aria-label="Instagram"
+                    <a :href="dataFooter.ig" target="_blank" aria-label="Instagram"
                       ><i class="fab fa-instagram"></i
                     ></a>
                   </li>
                   <li>
-                    <a :href="dataFooter.youtube" aria-label="Youtube"
+                    <a :href="dataFooter.youtube" target="_blank" aria-label="Youtube"
                       ><i class="fab fa-youtube"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a :href="dataFooter.tiktok" target="_blank" aria-label="Youtube"
+                      ><i class="fab fa-tiktok"></i
                     ></a>
                   </li>
                 </ul>
@@ -132,6 +137,7 @@ export default {
         ig: 'https://instagram.com',
         twitter: 'https://twitter.com',
         youtube: 'https://youtube.com',
+        tiktok:'',
       },
     }
   },
